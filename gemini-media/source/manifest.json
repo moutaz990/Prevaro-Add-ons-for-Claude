@@ -1,0 +1,101 @@
+{
+  "manifest_version": "0.3",
+  "name": "gemini-media",
+  "display_name": "Gemini Images & Video",
+  "version": "1.0.0",
+  "description": "Generate and edit images and generate short videos with Google Gemini, using your own Gemini API key. Files are saved on your computer.",
+  "long_description": "Adds image generation, image editing and video generation to Claude Desktop through Google Gemini.\n\n- **Your own key.** Paste your Gemini API key once in the settings. It is stored by Claude Desktop in the operating system's secure storage and is sent only to Google.\n- **Files stay on your computer.** Results are saved to the folder you choose. Nothing is uploaded anywhere except the prompts and reference images that go to Google.\n- **Spending cap.** A monthly cap in US dollars; when it is reached the tools refuse new requests until the next month.\n\nImage and video models have no free tier: the key must belong to a Google AI Studio project with billing enabled. Do not send client data or personal data.",
+  "author": {
+    "name": "Prevaro Add-ons for Claude",
+    "url": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude"
+  },
+  "documentation": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/gemini-media",
+  "support": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues",
+  "keywords": [
+    "gemini",
+    "image generation",
+    "image editing",
+    "video generation",
+    "google"
+  ],
+  "privacy_policies": [
+    "https://policies.google.com/privacy",
+    "https://ai.google.dev/gemini-api/terms"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.mjs"
+      ],
+      "env": {
+        "GEMINI_API_KEY": "${user_config.gemini_api_key}",
+        "OUTPUT_DIR": "${user_config.output_dir}",
+        "MONTHLY_CAP_USD": "${user_config.monthly_cap_usd}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "generate_image",
+      "description": "Generate 1-4 images from a text description (1K, 2K or 4K) and save them on this computer."
+    },
+    {
+      "name": "edit_image",
+      "description": "Edit or re-render images from this computer following written instructions; saves a new file."
+    },
+    {
+      "name": "generate_video",
+      "description": "Start a 3-10 second video (16:9 or 9:16) from a description or a starting image."
+    },
+    {
+      "name": "get_job",
+      "description": "Check a job and, when a video is ready, save it on this computer."
+    },
+    {
+      "name": "usage",
+      "description": "Spending this month against the cap, and the current price list."
+    }
+  ],
+  "user_config": {
+    "gemini_api_key": {
+      "type": "string",
+      "title": "Gemini API key",
+      "description": "Your key from Google AI Studio (API keys). It must belong to a project with billing enabled. Stored securely; sent only to Google.",
+      "sensitive": true,
+      "required": true
+    },
+    "output_dir": {
+      "type": "directory",
+      "title": "Save files to",
+      "description": "Folder on this computer where generated images and videos are saved.",
+      "required": true,
+      "default": "${DOCUMENTS}/Gemini Media"
+    },
+    "monthly_cap_usd": {
+      "type": "number",
+      "title": "Monthly spending cap (USD)",
+      "description": "The tools refuse new requests once this month's estimated spending reaches this amount. Set 0 to block all spending.",
+      "required": false,
+      "default": 30,
+      "min": 0,
+      "max": 10000
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

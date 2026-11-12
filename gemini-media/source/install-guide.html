@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<title>Gemini Images & Video — Install & Connect</title>
+<!-- Source of dist/gemini-media-install-guide-ar-en.pdf. Open in a browser and print to PDF (A4). -->
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Guide Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif; color: #1b2430; font-size: 9.7pt; line-height: 1.46; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 12mm 16mm 12mm; page-break-after: always; position: relative; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+  .ltr { direction: ltr; text-align: left; font-family: "Guide Latin", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  .rtl { direction: rtl; text-align: right; }
+
+  header { border-bottom: 2px solid #1b2430; padding-bottom: 7px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+  h1 { font-size: 18pt; line-height: 1.2; margin: 0; font-weight: 700; }
+  .sub { font-size: 9.4pt; color: #4d5a6b; margin-top: 3px; }
+  .ltr.page { font-size: 9.3pt; }
+  .os { font-size: 9pt; color: #1b2430; border: 1px solid #1b2430; border-radius: 99px; padding: 3px 11px; white-space: nowrap; }
+
+  h2 { font-size: 11pt; margin: 9px 0 4px; font-weight: 700; color: #0f5b53; }
+  p { margin: 3px 0; }
+  ul { margin: 3px 0; padding-inline-start: 18px; }
+  li { margin: 1px 0; }
+  code, .mono { font-family: "DejaVu Sans Mono", Consolas, Menlo, monospace; font-size: 8.4pt; background: #eef1f4; padding: 1px 5px; border-radius: 4px; direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+  .ui { font-weight: 700; direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+  .alt .ui { white-space: normal; }
+
+  .steps { margin: 0; padding: 0; list-style: none; }
+  .steps > li { display: flex; gap: 10px; margin: 5px 0; align-items: flex-start; }
+  .num { flex: 0 0 22px; height: 22px; border-radius: 50%; background: #0f5b53; color: #fff; font-weight: 700; font-size: 10.5pt; display: flex; align-items: center; justify-content: center; margin-top: 1px; font-family: "Guide Latin", Arial, sans-serif; }
+  .steps .body { flex: 1; }
+  .alt { color: #4d5a6b; font-size: 9pt; margin-top: 1px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 1px; font-size: 9.2pt; }
+  th, td { border: 1px solid #cfd6de; padding: 3.5px 8px; vertical-align: top; text-align: start; }
+  th { background: #eef1f4; font-weight: 700; }
+  td.k { width: 36%; }
+
+  .note { background: #fff7e3; border: 1px solid #e3c36a; border-radius: 7px; padding: 6px 11px; margin-top: 8px; font-size: 9.2pt; }
+  .note p { margin: 1px 0; }
+  footer { position: absolute; bottom: 7mm; left: 17mm; right: 17mm; font-size: 8.4pt; color: #6b7785; display: flex; justify-content: space-between; border-top: 1px solid #dfe4ea; padding-top: 5px; }
+</style>
+</head>
+<body>
+
+<!-- ============================== Arabic ============================== -->
+<section class="page rtl" lang="ar">
+  <header>
+    <div>
+      <h1>التثبيت والربط</h1>
+      <div class="sub">إضافة <span class="ui">Gemini Images &amp; Video</span> لتطبيق <span class="ui">Claude Desktop</span>: توليد الصور وتعديلها وتوليد الفيديو</div>
+    </div>
+    <div class="os ltr">Mac · Windows</div>
+  </header>
+
+  <h2>قبل أن تبدأ</h2>
+  <ul>
+    <li>تطبيق <span class="ui">Claude Desktop</span> مثبّت ومحدَّث، على Mac أو Windows. الإضافة لا تعمل في المتصفح ولا في الجوال.</li>
+    <li><b>مفتاح Gemini API</b> من Google AI Studio: <span class="mono">aistudio.google.com/apikey</span><br>يجب أن يكون لمشروع مفعّل فيه الدفع، فتوليد الصور والفيديو بلا باقة مجانية.</li>
+    <li>لا حاجة لتثبيت أي برنامج آخر.</li>
+  </ul>
+
+  <h2>التثبيت</h2>
+  <ol class="steps">
+    <li><span class="num">1</span><div class="body">نزّل الملف <code>gemini-media-1.0.0.mcpb</code> (الملف نفسه لـMac و Windows).</div></li>
+    <li><span class="num">2</span><div class="body">افتحه <b>بنقرتين</b>. يفتح Claude Desktop نافذة التثبيت، فاضغط <span class="ui">Install</span>.
+      <div class="alt">إن لم يفتح: في Claude Desktop افتح <span class="ui">Settings › Extensions › Advanced settings › Install Extension…</span> واختر الملف.</div></div></li>
+  </ol>
+
+  <h2>الربط بمفتاحك</h2>
+  <ol class="steps">
+    <li><span class="num">3</span><div class="body">املأ الحقول الثلاثة:
+      <table>
+        <tr><th>الحقل</th><th>ماذا تضع</th></tr>
+        <tr><td class="k"><span class="ui">Gemini API key</span></td><td>الصق مفتاحك</td></tr>
+        <tr><td class="k"><span class="ui">Save files to</span></td><td>المجلد الذي تُحفظ فيه الصور والفيديو. الافتراضي: <code>Documents/Gemini Media</code></td></tr>
+        <tr><td class="k"><span class="ui">Monthly spending cap (USD)</span></td><td>أعلى مبلغ تسمح بصرفه شهرياً. الافتراضي: 30</td></tr>
+      </table></div></li>
+    <li><span class="num">4</span><div class="body">احفظ الإعدادات وتأكد أن الإضافة <b>مفعّلة</b>.</div></li>
+  </ol>
+
+  <h2>التجربة</h2>
+  <ol class="steps">
+    <li><span class="num">5</span><div class="body">افتح محادثة جديدة واكتب: «ولّد صورة مربعة لكاميرا مراقبة بيضاء على خلفية رمادية».<br>يطلب Claude الإذن باستخدام الأداة، فوافق. تجد الصورة في المجلد الذي اخترته.</div></li>
+  </ol>
+
+  <h2>إن لم يعمل</h2>
+  <table>
+    <tr><th>المشكلة</th><th>الحل</th></tr>
+    <tr><td class="k">لا يحدث شيء عند فتح الملف</td><td>استخدم طريقة <span class="ui">Settings</span> في الخطوة 2، وتأكد أن Claude Desktop محدَّث</td></tr>
+    <tr><td class="k">الأدوات لا تظهر في المحادثة</td><td>أغلق Claude Desktop وافتحه من جديد</td></tr>
+    <tr><td class="k">Mac يعرض تنبيهاً أمنياً</td><td><span class="ui">System Settings › Privacy &amp; Security</span> ثم اسمح</td></tr>
+    <tr><td class="k">لا توجد صفحة <span class="ui">Extensions</span>، أو التثبيت مرفوض</td><td>حسابك ضمن مؤسسة (Team أو Enterprise) تقيّد الإضافات. اطلب من مالك المؤسسة السماح بها</td></tr>
+    <tr><td class="k">Google ترفض المفتاح</td><td>تأكد أنه منسوخ كاملاً، وأن مشروعه مفعّل فيه الدفع</td></tr>
+  </table>
+
+  <div class="note">
+    <p><b>تذكّر:</b> كل ما تولّده يُحاسَب على مفتاحك أنت لدى Google: نحو 0.04 دولار للصورة، ونحو 0.10 دولار لكل ثانية فيديو.</p>
+    <p>الأوصاف والصور التي تطلب تعديلها تُرسل إلى Google. لا ترسل بيانات عملاء أو بيانات شخصية.</p>
+    <p>لتغيير المفتاح أو الحد الشهري: <span class="ui">Settings › Extensions › Gemini Images &amp; Video › Configure</span></p>
+  </div>
+
+  <footer><span>العربية · 1 / 2</span><span class="ltr">Gemini Images &amp; Video 1.0.0</span></footer>
+</section>
+
+<!-- ============================== English ============================== -->
+<section class="page ltr" lang="en">
+  <header>
+    <div>
+      <h1>Install &amp; Connect</h1>
+      <div class="sub"><b>Gemini Images &amp; Video</b> extension for <b>Claude Desktop</b>: generate and edit images, generate video</div>
+    </div>
+    <div class="os">Mac · Windows</div>
+  </header>
+
+  <h2>Before you start</h2>
+  <ul>
+    <li>The <b>Claude Desktop</b> app, installed and up to date, on Mac or Windows. The extension does not work in the browser or on mobile.</li>
+    <li>A <b>Gemini API key</b> from Google AI Studio: <span class="mono">aistudio.google.com/apikey</span><br>It must belong to a project with billing enabled; image and video generation have no free tier.</li>
+    <li>Nothing else to install.</li>
+  </ul>
+
+  <h2>Install</h2>
+  <ol class="steps">
+    <li><span class="num">1</span><div class="body">Download the file <code>gemini-media-1.0.0.mcpb</code> (the same file for Mac and Windows).</div></li>
+    <li><span class="num">2</span><div class="body"><b>Double-click</b> it. Claude Desktop opens an install window; click <span class="ui">Install</span>.
+      <div class="alt">If nothing opens: in Claude Desktop go to <span class="ui">Settings › Extensions › Advanced settings › Install Extension…</span> and choose the file.</div></div></li>
+  </ol>
+
+  <h2>Connect your key</h2>
+  <ol class="steps">
+    <li><span class="num">3</span><div class="body">Fill in the three fields:
+      <table>
+        <tr><th>Field</th><th>What to enter</th></tr>
+        <tr><td class="k"><span class="ui">Gemini API key</span></td><td>Paste your key</td></tr>
+        <tr><td class="k"><span class="ui">Save files to</span></td><td>The folder where images and videos are saved. Default: <code>Documents/Gemini Media</code></td></tr>
+        <tr><td class="k"><span class="ui">Monthly spending cap (USD)</span></td><td>The most you allow per month. Default: 30</td></tr>
+      </table></div></li>
+    <li><span class="num">4</span><div class="body">Save the settings and make sure the extension is <b>enabled</b>.</div></li>
+  </ol>
+
+  <h2>Try it</h2>
+  <ol class="steps">
+    <li><span class="num">5</span><div class="body">Open a new chat and type: “Generate a square image of a white security camera on a grey background.”<br>Claude asks permission to use the tool; allow it. The image is in the folder you chose.</div></li>
+  </ol>
+
+  <h2>If it does not work</h2>
+  <table>
+    <tr><th>Problem</th><th>Fix</th></tr>
+    <tr><td class="k">Nothing happens when you open the file</td><td>Use the <span class="ui">Settings</span> route in step 2, and make sure Claude Desktop is up to date</td></tr>
+    <tr><td class="k">The tools do not appear in the chat</td><td>Quit Claude Desktop and open it again</td></tr>
+    <tr><td class="k">Mac shows a security warning</td><td><span class="ui">System Settings › Privacy &amp; Security</span>, then allow</td></tr>
+    <tr><td class="k">There is no <span class="ui">Extensions</span> page, or the install is refused</td><td>Your account is in an organization (Team or Enterprise) that restricts extensions. Ask the organization owner to allow it</td></tr>
+    <tr><td class="k">Google rejects the key</td><td>Check that it was copied in full and that its project has billing enabled</td></tr>
+  </table>
+
+  <div class="note">
+    <p><b>Remember:</b> everything you generate is billed to your own key by Google: about $0.04 per image and about $0.10 per second of video.</p>
+    <p>Prompts, and any images you ask to edit, are sent to Google. Do not send client data or personal data.</p>
+    <p>To change the key or the monthly cap: <span class="ui">Settings › Extensions › Gemini Images &amp; Video › Configure</span></p>
+  </div>
+
+  <footer><span>English · 2 / 2</span><span>Gemini Images &amp; Video 1.0.0</span></footer>
+</section>
+
+</body>
+</html>
