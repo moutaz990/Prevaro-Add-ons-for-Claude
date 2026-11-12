@@ -8,6 +8,8 @@ client-data/
 # Local artifacts
 node_modules/
 *.zip
+# The chat-ready skill packages are deliverables: keep them in the repository.
+!chat-skills/*.zip
 *.log
 verify/out/
 __pycache__/
