@@ -10,7 +10,7 @@ Claude Code قوي وحده، لكنه يعمل بأسلوب عام. هذه ال
 3. **قدرة على الفيديو.** فيديو موشن قصير يُكتب بالكود ويخرج MP4، دون برنامج مونتاج.
 4. **قراءة مخططات AutoCAD.** يفتح DWG و DXF على جهازك، ويعدّ الرموز ويقيس المسافات.
 5. **فريقاً من المختصين.** 9 وكلاء، كل واحد بخبرة وقواعد عمل محددة.
-6. **ذاكرة للجلسات الطويلة.** عند امتلاء المحادثة يكتب ملخصاً منظماً ويكمل في جلسة نظيفة.
+6. **أدوات للجلسات الطويلة.** أوامر Claude Code المدمجة `/compact` و`/resume` و`/rewind` (يدوية). وبلغن auto-handoff مثبّت **معطّلاً** لأنه يقاطع المهمة الجارية ولا يطلب موافقتك.
 7. **أماناً.** إصدارات ثابتة مراجَعة، وإزالة نظيفة بأمر واحد.
 
 ## قبل التثبيت: ماذا تحتاج؟
@@ -93,7 +93,7 @@ brew install node@22 ffmpeg
 | **HyperFrames** (مهارتان + CLI) | فيديو من HTML: عناوين، شعارات متحركة، شرائح، ترجمة | «فيديو 10 ثوانٍ 1080p بالشعار ونص الخدمات» |
 | **Remotion** (بلغن) | فيديو بـ React: قوالب قابلة للتكرار، رسوم بيانية متحركة | «قالب فيديو أسبوعي لأرقام المبيعات» |
 | **cad** (MCP) | فتح DWG/DXF، عدّ الرموز، القياس، التعديل، التصدير إلى DXF | «افتح plan.dwg وعدّ الرموز حسب الاسم والطبقة» |
-| **auto-handoff** (بلغن) | لا ضياع للسياق في الجلسات الطويلة، والملخص يبقى على جهازك | تلقائي |
+| **auto-handoff** (بلغن، **معطّل افتراضياً**) | يكتب ملخصاً ويفتح جلسة نظيفة عند امتلاء المحادثة، لكنه يرفض الأدوات ويوقف المهمة الجارية عند الحد ولا يطلب موافقة | للتفعيل: `claude plugin enable auto-handoff@prevaro-addons` (غير موصى به) |
 | **Firecrawl / Perplexity** (اختياري) | سحب صفحات الويب وبحث موثّق | «اسحب مواصفات هذا المنتج من موقع المورد» |
 
 ## الوكلاء التسعة
@@ -116,7 +116,7 @@ brew install node@22 ffmpeg
 
 | يوفّر | يزيد |
 |---|---|
-| منع قراءة `node_modules` والملفات الكبيرة. ملخص الجلسات الطويلة يصغّر السياق. المهارات لا تُحمّل كاملة إلا عند استخدامها | كل خادم MCP يضيف تعريفات أدواته. الوكيل الفرعي له استهلاكه الخاص |
+| منع قراءة `node_modules` والملفات الكبيرة. ضغط الجلسات الطويلة يدوياً بـ `/compact` يصغّر السياق. المهارات لا تُحمّل كاملة إلا عند استخدامها | كل خادم MCP يضيف تعريفات أدواته. الوكيل الفرعي له استهلاكه الخاص |
 
 للقياس اكتب `/context` داخل Claude قبل التثبيت وبعده.
 
@@ -184,7 +184,7 @@ Out of the box, Claude Code is capable but generic. This pack adds:
 3. **Video.** Short motion videos written as code and rendered to MP4.
 4. **CAD reading.** Opens DWG/DXF locally, counts blocks and measures distances.
 5. **A team of specialists.** Nine subagents with focused expertise and working rules.
-6. **Memory for long sessions.** A structured handoff brief, then a fresh session, so context is never lost.
+6. **Long-session tools.** Claude Code's built-in `/compact`, `/resume` and `/rewind` (manual). The auto-handoff plugin is installed **disabled** because it interrupts a running task and has no approval step.
 7. **Safety.** Reviewed pinned versions and a clean one-command uninstall.
 
 ## Before installing
@@ -252,14 +252,14 @@ Rule of thumb: anything that needs software on your computer runs in Claude Code
 | mcp-builder | Build your own MCP servers |
 | HyperFrames, Remotion | Code-based video to MP4 |
 | cad MCP | Open, query, measure, edit DWG/DXF; export DXF |
-| auto-handoff | Context-safe long sessions; briefs stay on your machine |
+| auto-handoff (**disabled by default**) | Writes a handoff brief and starts a fresh session when the context fills, but it refuses tool calls and stops the running turn at its limit, with no approval step. Enable with `claude plugin enable auto-handoff@prevaro-addons` (not recommended) |
 | Firecrawl / Perplexity (optional) | Web scraping and cited search (paid keys) |
 | 9 subagents | frontend, backend, code review, AI-code security audit, networking, UI, UX, brand, content |
 
 ## Token use
 The goal is quality and structure, not direct savings. Savings come from:
 - ignore rules that keep `node_modules` and large files out of context;
-- automatic handoffs that keep long sessions small;
+- manual `/compact` to keep long sessions small;
 - skills that load fully only when used.
 
 Costs come from MCP tool definitions and from subagents running their own context. Measure with `/context`.

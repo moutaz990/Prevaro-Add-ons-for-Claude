@@ -75,7 +75,9 @@ claude plugin marketplace add "$REPO" >/dev/null 2>&1 && helper ledger-add "$LED
 if claude plugin install auto-handoff@prevaro-addons >/dev/null 2>&1; then
   helper ledger-add "$LEDGER" plugins auto-handoff@prevaro-addons
   echo '{"viewer":"off"}' | claude plugin configure auto-handoff@prevaro-addons --values-stdin >/dev/null 2>&1
-  res 3 "auto-handoff plugin" OK "viewer=off"
+  # DISABLED on purpose: no approval mode, and at its threshold it refuses tool calls and stops the running turn.
+  if claude plugin disable auto-handoff@prevaro-addons >/dev/null 2>&1; then res 3 "auto-handoff plugin" OK "installed but DISABLED (no approval mode; interrupts running tasks)"
+  else res 3 "auto-handoff plugin" FAILED "installed but could NOT be disabled: run  claude plugin disable auto-handoff@prevaro-addons"; fi
 else res 3 "auto-handoff plugin" FAILED; fi
 
 echo "=== Phase 4 ==="

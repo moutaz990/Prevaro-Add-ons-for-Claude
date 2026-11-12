@@ -17,7 +17,7 @@
 | فيديو | HyperFrames و Remotion: فيديو موشن بالكود إلى MP4 |
 | مخططات CAD | خادم `cad`: فتح DWG/DXF، استعلام، قياس، تعديل، تصدير DXF |
 | وكلاء متخصصون (9) | واجهات، backend، مراجعة كود، أمن الكود المولّد، شبكات، UI، UX، هوية، محتوى |
-| جلسات طويلة | auto-handoff: ملخص تلقائي وجلسة نظيفة دون فقدان السياق |
+| جلسات طويلة | auto-handoff (مثبّت **معطّل** افتراضياً: يقاطع المهمة الجارية ولا يطلب موافقتك). الأوامر اليدوية `/compact` و`/resume` و`/rewind` تكفي |
 | بحث (اختياري) | Firecrawl و Perplexity بمفتاحك المدفوع |
 | **مهارات للمحادثة** | 6 ملفات ZIP جاهزة للرفع على Claude Chat دون تثبيت: [chat-skills/](chat-skills/) |
 
@@ -57,7 +57,7 @@ git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git ~/prevaro-
 - **في أول مرة على Windows:** ابدأ بإضافة `-CheckOnly` (`--check-only` على الماك). يفحص فقط دون أي تغيير.
 - **أسئلة المفاتيح:** اختيارية، واضغط Enter للتخطي. مفتاح Perplexity يتطلب شحن رصيد مسبق.
 - **بعد الانتهاء:** افتح Terminal جديداً واكتب `claude`.
-- **لا تحذف ولا تنقل مجلد `prevaro-addons` بعد التثبيت:** بلغن auto-handoff يُقرأ منه.
+- **لا تحذف ولا تنقل مجلد `prevaro-addons` بعد التثبيت:** البلغنات المثبّتة منه (ومنها auto-handoff المعطّل) تُقرأ منه.
 
 ## التحديث والإزالة
 ```powershell
@@ -108,7 +108,7 @@ Ready-made add-ons for **Claude Code**. Each component is security-reviewed and 
 **Includes:**
 - 12 skills: web design, graphics, video and MCP building.
 - 9 specialist subagents.
-- Remotion and auto-handoff plugins.
+- Remotion and auto-handoff plugins (auto-handoff is installed **disabled** by default: it has no approval mode and interrupts a running task).
 - MCP servers: Playwright, a local DWG/DXF `cad` server, and optional Firecrawl/Perplexity.
 
 **Chat-only:** upload the ready ZIPs in [chat-skills/](chat-skills/) to Claude chat. Nothing to install.
@@ -129,7 +129,7 @@ Ready-made add-ons for **Claude Code**. Each component is security-reviewed and 
   git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git ~/prevaro-addons && bash ~/prevaro-addons/install/install.sh
   ```
 - Add `-CheckOnly` / `--check-only` for a dry run.
-- Keep the `prevaro-addons` folder after installing: the auto-handoff plugin is read from it.
+- Keep the `prevaro-addons` folder after installing: plugins installed from it (including the disabled auto-handoff) are read from it.
 
 **Update:** run `git pull`, then run the installer again.
 

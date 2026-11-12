@@ -18,3 +18,11 @@
 `/compact` · `/context` · `/clear` · `/resume` · `/rewind` (alias `/checkpoint`) · `/export` · `/memory` · الإعداد `autoCompactEnabled` · المتغيران `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` و `DISABLE_AUTO_COMPACT`.
 - **تنبيه:** `DISABLE_AUTO_COMPACT` يعطّل auto-handoff أيضاً (من README البلغن)، فلم نضبطه.
 - **`.claudeignore`:** غير مدعوم في هذا الإصدار، ولا أثر له في الملف التنفيذي. استخدمنا `permissions.deny` بدلاً منه.
+
+## قرار 2026-11-12: مثبّت ومعطّل افتراضياً
+فُحص كود البلغن (commit `8d762ce`):
+- **لا وضع موافقة:** خياراته الستة (الحد، عدد التسليمات المتتالية، قالبا الملخص، ملفات مستثناة، عنوان العرض) ليس فيها وضع موافقة، وبعد كتابة الملخص ينفّذ `/clear` تلقائياً (`register.tsx:244`).
+- **يقاطع المهمة الجارية:** عند تجاوز الحد يرفض الأدوات (`register.tsx:451-463`) ويكتب «Stopping this turn to hand off» (`:494`).
+- **المعالجة:** يبقى مثبّتاً ومعطّلاً (`claude plugin disable`)، والمثبّتان يعطّلانه بعد كل تثبيت. حفظ السياق يدوي: `/compact` و`/resume` و`/rewind`.
+- **للتفعيل (غير موصى به):** `claude plugin enable auto-handoff@prevaro-addons`.
+

@@ -223,7 +223,11 @@ $ah = $M.plugins | Where-Object { $_.id -like 'auto-handoff@*' }
 if ($LASTEXITCODE -eq 0) {
     Add-Ledger 'plugins' $ah.id
     '{"viewer":"off"}' | & claude plugin configure $ah.id --values-stdin 2>&1 | Out-Null
-    Add-Result '3' 'auto-handoff plugin' 'OK' "v$($ah.expectedVersion) @ $($ah.sourceSha.Substring(0,7)), viewer=off"
+    # DISABLED on purpose: the plugin has no approval mode and, at its threshold, refuses tool calls and stops the running
+    # turn to hand off. Installed but disabled; to enable: claude plugin enable auto-handoff@prevaro-addons (see reviews/03).
+    & claude plugin disable $ah.id 2>&1 | Out-Null
+    if ($LASTEXITCODE -eq 0) { Add-Result '3' 'auto-handoff plugin' 'OK' "v$($ah.expectedVersion) installed but DISABLED (no approval mode; interrupts running tasks)" }
+    else { Add-Result '3' 'auto-handoff plugin' 'FAILED' "installed but could NOT be disabled: run  claude plugin disable $($ah.id)" }
 } else { Add-Result '3' 'auto-handoff plugin' 'FAILED' 'claude plugin install failed' }
 Add-Result '3' 'Built-in: /context /compact /rewind /resume /export, autoCompactEnabled' 'OK' 'verified in Claude Code 2.1.322'
 
