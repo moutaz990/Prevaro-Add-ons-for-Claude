@@ -62,6 +62,22 @@ brew install node@22 ffmpeg
 - **كل ما يحتاج برنامجاً على جهازك** (فتح مخططات، فيديو، فحص مواقع، وكلاء، بلغنز) يعمل في **Claude Code على الكمبيوتر** فقط.
 - **المهارات النصية والتصميمية** تعمل أيضاً في **Chat** بعد رفعها.
 
+## ماذا أقدر أعمل من Chat، وماذا يحتاج Claude Code؟
+| المهمة | Claude Chat (متصفح، تطبيق، جوال) | Claude Code على الكمبيوتر |
+|---|---|---|
+| قراءة مخطط **PDF**: فهمه، وصفه، استخراج الملاحظات | ✅ ارفع الـ PDF | ✅ |
+| فتح ملف **DWG** وقراءته | ❌ عملياً لا: صيغة مغلقة ولا أداة لها في المحادثة. صدّره PDF أو DXF | ✅ خادم `cad`: فتح، عدّ الرموز، قياس، تعديل، تصدير DXF |
+| عدّ الرموز في **DXF** | ⚠️ غير مضمون: يحتاج code execution ومكتبة مناسبة في بيئة المحادثة [يُتحقق] | ✅ خادم `cad` |
+| **موشن جرافيك وفيديو MP4** (HyperFrames، Remotion) | ❌ يحتاج ffmpeg ومتصفحاً على الجهاز | ✅ |
+| رسوم متحركة تُعرض داخل المحادثة (HTML أو SVG) | ✅ بدون ملف فيديو | ✅ |
+| ملصقات، ثيمات، صفحات هبوط، رسوم Hairline | ✅ بعد رفع ملفات [chat-skills/](chat-skills/) | ✅ |
+| فحص موقع حي ولقطات شاشة | ❌ | ✅ Playwright |
+| الوكلاء الفرعيون، auto-handoff | ❌ | ✅ |
+
+**القاعدة:**
+- ما يحتاج **برنامجاً على الجهاز** يعمل في Claude Code على الكمبيوتر فقط: DWG، فيديو MP4، فحص المواقع، الوكلاء.
+- **المحادثة:** للفهم والكتابة والتصميم، وقراءة المخططات بصيغة PDF.
+
 ## المكوّنات وفوائدها
 | المكوّن | الفائدة | مثال طلب |
 |---|---|---|
@@ -213,6 +229,18 @@ brew install node@22 ffmpeg
 | Claude chat (web, desktop, mobile) | Any | Only uploaded skills (`chat-skills/`) | Pages, posters, themes and interactive art in chat |
 
 Rule of thumb: anything that needs software on your computer runs in Claude Code on the computer only. Text and design skills also run in chat once uploaded.
+
+## What can I do in chat, and what needs Claude Code?
+| Task | Claude chat (web, desktop, mobile) | Claude Code on a computer |
+|---|---|---|
+| Read a **PDF** drawing (understand it, describe it, extract notes) | Yes, upload the PDF | Yes |
+| Open a **DWG** file | Practically no: closed format with no tool for it in chat. Export to PDF or DXF | Yes, with the `cad` server: open, count blocks, measure, edit, export DXF |
+| Count blocks in a **DXF** | Not guaranteed: needs code execution and a suitable library in the chat sandbox (unverified) | Yes, with the `cad` server |
+| **Motion graphics / MP4 video** (HyperFrames, Remotion) | No: needs ffmpeg and a browser on the computer | Yes |
+| Animations shown inside the chat (HTML/SVG) | Yes, with no video file | Yes |
+| Posters, themes, landing pages, Hairline art | Yes, after uploading [chat-skills/](chat-skills/) | Yes |
+| Live site checks and screenshots | No | Yes, with Playwright |
+| Subagents, auto-handoff | No | Yes |
 
 ## Components
 | Component | Benefit |
