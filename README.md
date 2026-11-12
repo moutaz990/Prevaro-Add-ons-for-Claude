@@ -37,7 +37,15 @@
 
 السكربت يفحص كل ذلك أولاً، ولا يغيّر شيئاً إن نقص المطلوب.
 
-**Windows (PowerShell):**
+**Windows — أمر واحد يجهّز كل شيء** (يثبّت Git و Node و ffmpeg و Claude Code إن نقصت، ثم الحزمة):
+```powershell
+irm https://raw.githubusercontent.com/moutaz990/Prevaro-Add-ons-for-Claude/main/install/bootstrap.ps1 | iex
+```
+- سيسألك عن مفاتيح API اختيارية: Gemini و Firecrawl و Perplexity. **اترك أي حقل فارغاً واضغط Enter للتخطي.**
+- إن ظهرت نافذة صلاحيات Windows (UAC) اضغط **Yes**.
+- بعد الانتهاء افتح PowerShell جديداً واكتب `claude`، وسجّل الدخول أول مرة.
+
+**أو يدوياً بعد تثبيت المتطلبات (PowerShell):**
 ```powershell
 git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git "$HOME\prevaro-addons"; powershell -ExecutionPolicy Bypass -File "$HOME\prevaro-addons\install\install.ps1"
 ```
@@ -108,7 +116,11 @@ Ready-made add-ons for **Claude Code**. Each component is security-reviewed and 
 **Requirements (computer):** Claude Code 2.1.275+, Node.js 22+, Git 2.25+. ffmpeg is optional (video), and Chrome/Edge is recommended.
 
 **Install:**
-- Windows:
+- Windows, one command (installs Git, Node, ffmpeg and Claude Code if missing, then the pack). Optional API keys (Gemini, Firecrawl, Perplexity): leave empty to skip.
+  ```powershell
+  irm https://raw.githubusercontent.com/moutaz990/Prevaro-Add-ons-for-Claude/main/install/bootstrap.ps1 | iex
+  ```
+- Windows, manual:
   ```powershell
   git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git "$HOME\prevaro-addons"; powershell -ExecutionPolicy Bypass -File "$HOME\prevaro-addons\install\install.ps1"
   ```

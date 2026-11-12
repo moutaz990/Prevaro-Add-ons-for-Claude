@@ -17,6 +17,9 @@
 .PARAMETER Site
   Website used for the desktop/mobile screenshot check (default https://example.com).
 
+.PARAMETER SkipKeys
+  Do not ask for any API key (keeps keys already saved). Use when the installer is run by a tool, not a person.
+
 .PARAMETER NoVerify
   Skip the verification steps (screenshots, test video, provider tests).
 
@@ -27,7 +30,8 @@
 param(
     [switch]$CheckOnly,
     [string]$Site = 'https://example.com',
-    [switch]$NoVerify
+    [switch]$NoVerify,
+    [switch]$SkipKeys
 )
 
 $ErrorActionPreference = 'Continue'
@@ -65,6 +69,7 @@ function Invoke-Helper([string[]]$HelperArgs) {
 function Add-Ledger([string]$Section, [string]$Value) { [void](Invoke-Helper @('ledger-add', $Ledger, $Section, $Value)) }
 
 function Read-Secret([string]$Prompt) {
+    if ($SkipKeys) { return $null }   # -SkipKeys: never stop for input (e.g. when Claude runs the installer)
     $sec = Read-Host -Prompt $Prompt -AsSecureString
     $plain = [System.Net.NetworkCredential]::new('', $sec).Password
     if ([string]::IsNullOrWhiteSpace($plain)) { return $null }
@@ -229,6 +234,14 @@ if ($ag.Code -eq 0) { foreach ($x in ($ag.Out | ConvertFrom-Json)) { Add-Result 
 else { Add-Result '4' 'agents' 'FAILED' $ag.Out }
 
 # ----------------------------------------------------------------------------- phase 6
+Section 'مفاتيح API اختيارية (فارغ = تخطٍ)'
+# Gemini: for the upcoming Prevaro Gemini plugin. Saved under a PREVARO_ name on purpose, so that other tools
+# that read GEMINI_API_KEY automatically (e.g. a HyperFrames helper script) do not pick it up by accident.
+$hasG = [bool](Get-UserEnv 'PREVARO_GEMINI_API_KEY')
+$g = Read-Secret ("  Google Gemini API key{0} (فارغ = تخطٍ)" -f $(if ($hasG) { ' [محفوظ — Enter للإبقاء]' } else { '' }))
+if ($g) { Set-UserEnv 'PREVARO_GEMINI_API_KEY' $g; Add-Result 'keys' 'Gemini API key' 'OK' 'saved as PREVARO_GEMINI_API_KEY (user env)' }
+elseif ($hasG) { Add-Result 'keys' 'Gemini API key' 'OK' 'kept' } else { Add-Result 'keys' 'Gemini API key' 'SKIPPED' 'empty' }
+
 Section 'المرحلة 6 — بحث وسحب بيانات (اختياري، يحتاج مفتاحاً)'
 foreach ($s in @(@{ Name = 'firecrawl'; Env = 'FIRECRAWL_API_KEY' }, @{ Name = 'perplexity'; Env = 'PERPLEXITY_API_KEY' })) {
     $have = [bool](Get-UserEnv $s.Env)
