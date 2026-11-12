@@ -2,6 +2,9 @@
 
 **العربية** | [English](#english-guide)
 
+> هذا الدليل لحزمة **Claude Code** ولمهارات المحادثة. إضافة **Gemini Images & Video** لتطبيق Claude Desktop (توليد صور وفيديو بنقرتين) لها صفحتها: [gemini-media/](gemini-media/).
+> This guide covers the **Claude Code** pack and the chat skills. The **Gemini Images & Video** extension for Claude Desktop has its own page: [gemini-media/](gemini-media/README.md#english).
+
 ## لماذا هذه الإضافة؟
 Claude Code قوي وحده، لكنه يعمل بأسلوب عام. هذه الإضافة تعطيه:
 

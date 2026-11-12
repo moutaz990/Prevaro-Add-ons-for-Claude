@@ -1,7 +1,7 @@
 # مراجعة: Leonxlnx/taste-skill
 - **المصدر:** https://github.com/Leonxlnx/taste-skill @ `f6b76575f949707b4e3c37cd86cb44b0b98643e8` (2026-11-07)، رخصة MIT، الإصدار 2.5.1.
 - **ما يُثبَّت:** مجلد `skills/taste-skill` فقط (≈40MB، معظمه أصول بصرية) إلى `~/.claude/skills/design-taste-frontend`.
-- **لم نستخدم `npx skills add`:** أداة `skills` تجلب أحدث نسخة ولا تثبّت commit؛ نسخنا المجلد من commit مراجَع (انظر DECISIONS.md).
+- **لم نستخدم `npx skills add`:** أداة `skills` تجلب أحدث نسخة ولا تثبّت commit؛ نسخنا المجلد من commit مراجَع.
 - **install script:** لا يوجد في المهارة.
 - **hooks:** في رأس `SKILL.md` يوجد `Stop` hook (bash) يبحث عن `scripts/gate.mjs` ويشغّله بـ `node ... --hook claude` (مهلة 600 ث).
   - `gate.mjs` يخرج فوراً (exit 0) إن لم يوجد `.taste-skill/build.json` في مجلد المشروع، أي لا يعمل إلا أثناء بناء موقع بالمهارة.

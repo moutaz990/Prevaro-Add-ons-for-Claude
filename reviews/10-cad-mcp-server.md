@@ -5,7 +5,7 @@
 | المستودع | github.com/mlightcad/cad-viewer، MIT. HEAD عند المراجعة `833c202` (2026-11-11) |
 | الحزمة | `@mlightcad/cad-mcp-server`. حقل repository يطابق المستودع |
 | الإصدار المثبّت | **1.7.8**، الإصدار المستقر الوحيد (2026-11-02). أول نشر للحزمة كان 2026-10-25. فروع 1.8.0 كلها preview |
-| استثناء قاعدة 14 يوماً | 1.7.8 عمره 10 أيام. البديل الأقدم preview فقط، فاخترنا المستقر (DECISIONS D35) |
+| استثناء قاعدة 14 يوماً | 1.7.8 عمره 10 أيام. البديل الأقدم preview فقط، فاخترنا المستقر |
 | التحقق من tarball | sha512 يطابق سجل npm |
 | شجرة الاعتماديات | `mcp/cad-mcp-server/package-lock.json` يثبّت 122 حزمة. **لا يوجد أي install script** في الشجرة كلها. التثبيت بـ `npm ci --ignore-scripts` |
 | overrides | 9 حزم طرف ثالث كان عمرها أقل من 14 يوماً ثُبّتت على إصدار أقدم متوافق: playwright/playwright-core 1.64.1، hono 4.13.14، @hono/node-server 2.1.5، jose 6.2.13، express-rate-limit 8.7.1، ip-address 10.7.5، encodeurl 2.0.1، tslib 2.8.1. حزم `@mlightcad/*` بقيت على إصدارات 1.7.8 المتسقة |
