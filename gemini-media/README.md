@@ -60,7 +60,7 @@
 - **قراءة الملفات:** الإضافة تقرأ فقط ملفاً بامتداد صورة، حتى 8 ميغابايت، ومحتواه صورة JPEG أو PNG أو WebP فعلاً. أي ملف آخر يُرفض قبل أي اتصال.
 - **الكتابة:** في مجلد الحفظ فقط، بأسماء جديدة، ولا تكتب فوق ملف موجود.
 - **الحد الشهري** يُفرض على جهازك. ضعه 0 لإيقاف الصرف كله. فاتورة Google هي المرجع، وأرقام الإضافة تقدير.
-- **الإضافة غير موقّعة رقمياً**، فقد يعرض Claude تنبيهاً عند التثبيت. الكود كاملاً في [source/](source/) لمن يريد مراجعته أو بناء الملف بنفسه، والمراجعة الأمنية في [reviews/11-gemini-media.md](../reviews/11-gemini-media.md).
+- **الإضافة غير موقّعة رقمياً**، فقد يعرض Claude تنبيهاً عند التثبيت. الكود كاملاً في [source/](source/) برخصة [MIT](../LICENSE) لمن يريد مراجعته أو بناء الملف بنفسه، والمراجعة الأمنية في [reviews/11-gemini-media.md](../reviews/11-gemini-media.md).
 
 ## تغيير الإعدادات والإزالة
 | أريد | أفعل |
@@ -150,7 +150,7 @@ After installing, tell Claude what you want, for example "generate a square imag
 - **Reading files:** the extension reads only a file with an image extension, up to 8 MB, whose content really is JPEG, PNG or WebP. Anything else is refused before any connection is made.
 - **Writing files:** only in the output folder, under new names, never over an existing file.
 - **The monthly cap** is enforced on your computer. Set it to 0 to block all spending. Google's invoice is authoritative; the extension's figures are estimates.
-- **The extension is not code-signed**, so Claude may show a warning when you install it. The full code is in [source/](source/) for anyone who wants to review it or build the file themselves, and the security review is in [reviews/11-gemini-media.md](../reviews/11-gemini-media.md).
+- **The extension is not code-signed**, so Claude may show a warning when you install it. The full code is in [source/](source/), under the [MIT License](../LICENSE), for anyone who wants to review it or build the file themselves, and the security review is in [reviews/11-gemini-media.md](../reviews/11-gemini-media.md).
 
 ### Change settings or remove
 | I want to | Do this |

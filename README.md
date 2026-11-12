@@ -135,7 +135,8 @@ bash ~/prevaro-addons/install/uninstall.sh
 - **الخصوصية:** telemetry معطّل، ولا خوادم مكشوفة على الشبكة.
 - **المراجعات الأمنية:** في [reviews/](reviews/)، والمصادر والإصدارات في [manifest.json](manifest.json).
 - **المفاتيح:** تبقى على جهازك فقط، ولا شيء منها في هذا المستودع.
-- **رخص المكوّنات:** لكل مكوّن رخصته، ومنها:
+- **الرخصة:** ما كُتب لهذا المستودع برخصة [MIT](LICENSE): استخدمه وعدّله وشاركه بحرية مع إبقاء نص الرخصة.
+- **مكوّنات الآخرين تبقى برخصها**، والقائمة في [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). أهمها:
   - **Remotion:** مجاني حتى 3 موظفين، وما فوق ذلك Company License.
   - **محرك DWG في خادم cad:** برخصة GPL-3.0.
 - **مشكلة أو سؤال؟** افتح [Issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues).
@@ -223,4 +224,8 @@ git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git ~/prevaro-
 **Where it works:** everything works in Claude Code (terminal, desktop Code tab, IDE). Skills can also be uploaded to Claude chat as ZIP files. Agents, plugins and MCP servers are Claude Code only.
 
 ### Security
-Versions are pinned and the chosen npm packages are at least 14 days old (one documented exception). External install scripts are not run. Telemetry is off and no server is exposed on the network. Security reviews are in [reviews/](reviews/); sources and versions are in [manifest.json](manifest.json). Keys stay on your computer; none are in this repository. Questions or problems: open an [issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues).
+Versions are pinned and the chosen npm packages are at least 14 days old (one documented exception). External install scripts are not run. Telemetry is off and no server is exposed on the network. Security reviews are in [reviews/](reviews/); sources and versions are in [manifest.json](manifest.json). Keys stay on your computer; none are in this repository.
+
+**License:** what was written for this repository is under the [MIT License](LICENSE): use, change and share it freely, keeping the license text. Other people's components keep their own licenses, listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md); note that Remotion needs a Company License above 3 employees and the DWG engine of the `cad` server is GPL-3.0.
+
+Questions or problems: open an [issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues).

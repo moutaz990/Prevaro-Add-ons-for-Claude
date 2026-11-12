@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "license": "MIT",
   "description": "Claude Desktop extension: generate and edit images and generate video with Google Gemini, using your own API key.",
   "scripts": {
     "typecheck": "tsc --noEmit",
