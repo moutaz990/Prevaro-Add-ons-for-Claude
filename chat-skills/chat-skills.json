@@ -1,0 +1,17 @@
+{
+  "_comment": "Skills packaged for upload to Claude chat (claude.ai > Customize > Skills). Built by tools/build_chat_skills.py from the pinned commits in manifest.json. Chat upload limits (Claude Help Center, 2026-11-12): name <= 64 chars, description <= 200 chars, ZIP with the skill folder at its root.",
+  "skills": [
+    {"name": "frontend-design", "license_file": "LICENSE.txt", "license": "Apache-2.0",
+     "description": "Build distinctive, production-grade web pages, components and apps with bold, non-generic design. Use when asked to design, build or restyle a website, landing page or UI."},
+    {"name": "theme-factory", "license_file": "LICENSE.txt", "license": "Apache-2.0",
+     "description": "Apply a professional ready-made theme (colors and fonts) to slides, documents, reports or HTML pages, or create a new theme. Use when styling an artifact."},
+    {"name": "canvas-design", "license_file": "LICENSE.txt", "license": "Apache-2.0",
+     "description": "Create original posters, artwork and static visual designs as PNG or PDF, guided by a design philosophy. Use when asked for a poster, art piece or visual design."},
+    {"name": "mcp-builder", "license_file": "LICENSE.txt", "license": "Apache-2.0",
+     "description": "Guide for building high-quality MCP servers (Python FastMCP or TypeScript SDK) that connect AI to external APIs and services. Use when creating or improving an MCP server."},
+    {"name": "hairline-create", "license_file": "../../LICENSE", "license": "MIT",
+     "description": "Create one interactive isometric line figure in the Hairline style, delivered as a single self-contained HTML file. Use for /hairline-create or a request for a Hairline figure."},
+    {"name": "hairline-adopt", "license_file": "../../LICENSE", "license": "MIT",
+     "description": "Turn an SVG icon, logo or illustration into an interactive isometric Hairline line figure that answers the pointer. Use for /hairline-adopt or when given an SVG to bring to life."}
+  ]
+}

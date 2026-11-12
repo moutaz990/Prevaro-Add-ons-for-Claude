@@ -13,6 +13,55 @@ Claude Code قوي وحده، لكنه يعمل بأسلوب عام. هذه ال
 6. **ذاكرة للجلسات الطويلة.** عند امتلاء المحادثة يكتب ملخصاً منظماً ويكمل في جلسة نظيفة.
 7. **أماناً.** إصدارات ثابتة مراجَعة، وإزالة نظيفة بأمر واحد.
 
+## قبل التثبيت: ماذا تحتاج؟
+| تريد استخدام | الجهاز | ما تثبّته أولاً |
+|---|---|---|
+| **الحزمة كاملة** (Claude Code) | كمبيوتر Windows 10/11 أو macOS أو Linux | Claude Code، Node.js 22+، Git، ويُفضَّل Chrome أو Edge. ffmpeg اختياري للفيديو. الأوامر أدناه |
+| **مهارات Chat فقط** (مجلد `chat-skills`) | أي متصفح أو تطبيق Claude للكمبيوتر، ولا تثبيت | حساب Claude فيه code execution مفعّل |
+| **الجوال** | تطبيق Claude للجوال | لا تثبيت على الجوال. ترفع المهارات من المتصفح، ثم تستخدمها من حسابك [يُتحقق على الجوال] |
+
+**أوامر التحضير على Windows (PowerShell، مرة واحدة):**
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+```powershell
+winget install Git.Git
+```
+```powershell
+winget install Gyan.FFmpeg
+```
+
+**أوامر التحضير على macOS (Terminal، مرة واحدة):**
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+```bash
+xcode-select --install
+```
+```bash
+brew install node@22 ffmpeg
+```
+
+- **Homebrew:** إن لم يكن مثبتاً عندك، فثبّته من brew.sh.
+- **بعد التحضير:** أغلق النافذة وافتحها من جديد، ثم اكتب `claude` وسجّل الدخول بحسابك.
+- **الحزمة:** شغّل أمر التثبيت الموجود في README.
+
+## أين يعمل كل شيء؟ وكيف تشغّله؟
+| الواجهة | الجهاز | كيف تفتحها | ماذا يعمل فيها من الحزمة | ماذا يستفيد المستخدم |
+|---|---|---|---|---|
+| **Terminal** (الأمر `claude`) | كمبيوتر | افتح PowerShell أو Terminal واكتب `claude` | **كل شيء**: المهارات، الوكلاء، البلغنز، خوادم MCP (Playwright، cad) | أقوى تجربة. يعمل على ملفاتك ويفتح المواقع والمخططات ويصنع الفيديو |
+| **Claude Code داخل تطبيق Claude للكمبيوتر** (قسم Code، جلسة محلية) | كمبيوتر | افتح تطبيق Claude، ثم Code، واختر مجلداً على جهازك | المهارات والبلغنز. الوكلاء وخوادم MCP [يُتحقق بالتجربة] | نفس قدرات Terminal بواجهة رسومية |
+| **VS Code** (إضافة Claude Code) | كمبيوتر | ثبّت إضافة Claude Code في VS Code | كل شيء | العمل داخل محرر الكود |
+| **Claude Code على الويب أو الجوال** (جلسات سحابية) | متصفح أو جوال | claude.ai/code أو تطبيق الجوال | **فقط** المهارات المرفوعة لحسابك (من `chat-skills`). لا يقرأ ملفات جهازك | برمجة على مستودعات GitHub من أي مكان |
+| **Claude Chat** (claude.ai، تطبيق الكمبيوتر، تطبيق الجوال) | أي جهاز | محادثة عادية | **فقط** المهارات المرفوعة (`chat-skills`) | تصميم صفحات وملصقات وثيمات ورسوم تفاعلية داخل المحادثة |
+
+**القاعدة المختصرة:**
+- **كل ما يحتاج برنامجاً على جهازك** (فتح مخططات، فيديو، فحص مواقع، وكلاء، بلغنز) يعمل في **Claude Code على الكمبيوتر** فقط.
+- **المهارات النصية والتصميمية** تعمل أيضاً في **Chat** بعد رفعها.
+
 ## المكوّنات وفوائدها
 | المكوّن | الفائدة | مثال طلب |
 |---|---|---|
@@ -73,15 +122,23 @@ Claude Code قوي وحده، لكنه يعمل بأسلوب عام. هذه ال
 
 <a id="chat"></a>
 ## استخدام المهارات في Claude Chat
-1. claude.ai: **Settings > Capabilities**، وفعّل «Code execution and file creation».
-2. اضغط مجلد المهارة إلى ZIP:
-   - Windows: المجلد في `%USERPROFILE%\.claude\skills\<الاسم>`، ثم زر يمين، ثم Send to، ثم Compressed folder.
-   - الماك: المجلد في `~/.claude/skills/<الاسم>`، ثم زر يمين، ثم Compress.
-3. **Customize > Skills > + > Upload a skill**.
+**أسهل طريقة:** ملفات جاهزة في مجلد [`chat-skills/`](chat-skills/):
+- frontend-design
+- theme-factory
+- canvas-design
+- mcp-builder
+- hairline-create
+- hairline-adopt
 
-- **المزامنة:** المهارة المفعّلة في حسابك تنزل تلقائياً إلى Claude Code عند تسجيل الدخول بنفس الحساب، في اتجاه واحد فقط.
-- **مهارات تعمل في Chat:** frontend-design، theme-factory، canvas-design، brand-guidelines، hairline.
-- **مهارات تبقى في Claude Code:** hyperframes و webapp-testing و design-taste-frontend، لأنها تحتاج برامج على الجهاز أو متصفحاً.
+**الخطوات:**
+1. حمّل ملف ZIP من GitHub (Download raw file).
+2. claude.ai: **Settings > Capabilities**، وفعّل «Code execution and file creation».
+3. **Customize > Skills > + > Upload a skill**، وارفع الـ ZIP كما هو.
+4. اطلب في أي محادثة، مثل «صمّم صفحة هبوط لـ...». Claude يستخدم المهارة تلقائياً.
+
+**ملاحظات:**
+- **المزامنة:** المهارة المفعّلة في حسابك تظهر أيضاً في Claude Code عند تسجيل الدخول بنفس الحساب، في اتجاه واحد فقط.
+- **غير موجودة في `chat-skills`:** design-taste-frontend و hyperframes و webapp-testing، لأنها تحتاج متصفحاً أو برامج على الجهاز.
 
 ## حدود يجب معرفتها
 - **خادم cad:** تصدير DWG إلى DXF في الإصدار المثبّت (1.7.8) قد يُسقط الرموز المكررة كمصفوفة (MINSERT) وقيم attributes. ولا يصدّر PDF. للأرقام المهمة صدّر DXF من AutoCAD.
@@ -114,6 +171,49 @@ Out of the box, Claude Code is capable but generic. This pack adds:
 6. **Memory for long sessions.** A structured handoff brief, then a fresh session, so context is never lost.
 7. **Safety.** Reviewed pinned versions and a clean one-command uninstall.
 
+## Before installing
+| You want | Device | Install first |
+|---|---|---|
+| The full pack (Claude Code) | Windows 10/11, macOS or Linux computer | Claude Code, Node.js 22+ and Git. Chrome or Edge is recommended, and ffmpeg is optional (video) |
+| Chat skills only (`chat-skills/`) | Any browser or the Claude desktop app | Nothing; enable code execution in your account |
+| Phone | Claude mobile app | Nothing on the phone. Upload skills from a browser, then use them from your account [to be verified on mobile] |
+
+**Windows (one-time setup):**
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+```powershell
+winget install Git.Git
+```
+```powershell
+winget install Gyan.FFmpeg
+```
+
+**macOS (one-time setup):**
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+```bash
+xcode-select --install
+```
+```bash
+brew install node@22 ffmpeg
+```
+
+## Where each part runs
+| Surface | Device | What works | Benefit |
+|---|---|---|---|
+| Terminal (`claude`) | Computer | Everything: skills, agents, plugins, MCP (Playwright, cad) | Full power on your local files, sites, drawings and video |
+| Desktop app, Code tab (local session) | Computer | Skills and plugins. Agents and MCP to be verified | The same power in a GUI |
+| VS Code extension | Computer | Everything | Work inside your editor |
+| Claude Code on the web or mobile (cloud sessions) | Browser or phone | Only skills uploaded to your account; your local files are not read | Coding on GitHub repos from anywhere |
+| Claude chat (web, desktop, mobile) | Any | Only uploaded skills (`chat-skills/`) | Pages, posters, themes and interactive art in chat |
+
+Rule of thumb: anything that needs software on your computer runs in Claude Code on the computer only. Text and design skills also run in chat once uploaded.
+
 ## Components
 | Component | Benefit |
 |---|---|
@@ -140,10 +240,9 @@ Costs come from MCP tool definitions and from subagents running their own contex
 None needed. Claude picks skills and agents from your request. The first use of an MCP tool asks for permission. Useful commands: `/skills`, `/agents`, `/mcp`, `/context`, `/compact`, `/rewind`, `/resume`, `/reload-skills`.
 
 ## Claude chat
-To use a skill in Claude chat:
+Ready-made ZIPs are in [`chat-skills/`](chat-skills/). To use one:
 1. Enable code execution in claude.ai **Settings > Capabilities**.
-2. Zip the skill folder from `~/.claude/skills/<name>`.
-3. Upload it in **Customize > Skills**.
+2. Go to **Customize > Skills > Upload a skill**, select the ZIP as is, and enable it.
 
 Skills enabled on your account sync down to Claude Code (one way). Agents, plugins and MCP servers are Claude Code only.
 

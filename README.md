@@ -2,6 +2,8 @@
 
 **العربية** | [English](#english)
 
+**Prevaro** اسم مشروع أداة تصميم بالذكاء الاصطناعي، تصمم مخططات وتقارير فنية لأنظمة التيار الخفيف (ELV). هذه الحزمة أول جزء منشور منه.
+
 إضافات جاهزة لـ **Claude Code** تجعله أقوى في تصميم المواقع، والفيديو، وقراءة مخططات CAD، ومراجعة الكود، والجلسات الطويلة.
 - **مراجعة:** كل مكوّن مراجَع أمنياً ومثبّت على إصدار محدد.
 - **تثبيت وإزالة:** أمر واحد لكل منهما.
@@ -17,8 +19,13 @@
 | وكلاء متخصصون (9) | واجهات، backend، مراجعة كود، أمن الكود المولّد، شبكات، UI، UX، هوية، محتوى |
 | جلسات طويلة | auto-handoff: ملخص تلقائي وجلسة نظيفة دون فقدان السياق |
 | بحث (اختياري) | Firecrawl و Perplexity بمفتاحك المدفوع |
+| **مهارات للمحادثة** | 6 ملفات ZIP جاهزة للرفع على Claude Chat دون تثبيت: [chat-skills/](chat-skills/) |
 
 ## التثبيت
+- **الحزمة كاملة:** تعمل على **الكمبيوتر** (Windows 10/11، macOS، Linux) داخل Claude Code.
+- **المحادثة فقط** (متصفح، تطبيق الكمبيوتر، أو الجوال): يكفيك مجلد [chat-skills/](chat-skills/) دون تثبيت.
+- **تفاصيل كل واجهة:** في [GUIDE.md](GUIDE.md).
+
 **المتطلبات:**
 | البرنامج | Windows | macOS |
 |---|---|---|
@@ -32,11 +39,11 @@
 
 **Windows (PowerShell):**
 ```powershell
-git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Clude.git "$HOME\prevaro-addons"; powershell -ExecutionPolicy Bypass -File "$HOME\prevaro-addons\install\install.ps1"
+git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git "$HOME\prevaro-addons"; powershell -ExecutionPolicy Bypass -File "$HOME\prevaro-addons\install\install.ps1"
 ```
 **macOS / Linux (Terminal):**
 ```bash
-git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Clude.git ~/prevaro-addons && bash ~/prevaro-addons/install/install.sh
+git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git ~/prevaro-addons && bash ~/prevaro-addons/install/install.sh
 ```
 
 - **في أول مرة على Windows:** ابدأ بإضافة `-CheckOnly` (`--check-only` على الماك). يفحص فقط دون أي تغيير.
@@ -86,6 +93,8 @@ bash ~/prevaro-addons/install/uninstall.sh
 <a id="english"></a>
 ## English
 
+**Prevaro** is an AI design tool project for ELV (extra-low-voltage) drawings and technical reports. This pack is its first public part.
+
 Ready-made add-ons for **Claude Code**. Each component is security-reviewed and version-pinned. One command installs everything, and one command removes it. Benefits in detail: [GUIDE.md](GUIDE.md).
 
 **Includes:**
@@ -94,16 +103,18 @@ Ready-made add-ons for **Claude Code**. Each component is security-reviewed and 
 - Remotion and auto-handoff plugins.
 - MCP servers: Playwright, a local DWG/DXF `cad` server, and optional Firecrawl/Perplexity.
 
-**Requirements:** Claude Code 2.1.275+, Node.js 22+, Git 2.25+. ffmpeg is optional (video), and Chrome/Edge is recommended.
+**Chat-only:** upload the ready ZIPs in [chat-skills/](chat-skills/) to Claude chat. Nothing to install.
+
+**Requirements (computer):** Claude Code 2.1.275+, Node.js 22+, Git 2.25+. ffmpeg is optional (video), and Chrome/Edge is recommended.
 
 **Install:**
 - Windows:
   ```powershell
-  git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Clude.git "$HOME\prevaro-addons"; powershell -ExecutionPolicy Bypass -File "$HOME\prevaro-addons\install\install.ps1"
+  git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git "$HOME\prevaro-addons"; powershell -ExecutionPolicy Bypass -File "$HOME\prevaro-addons\install\install.ps1"
   ```
 - macOS/Linux:
   ```bash
-  git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Clude.git ~/prevaro-addons && bash ~/prevaro-addons/install/install.sh
+  git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git ~/prevaro-addons && bash ~/prevaro-addons/install/install.sh
   ```
 - Add `-CheckOnly` / `--check-only` for a dry run.
 - Keep the `prevaro-addons` folder after installing: the auto-handoff plugin is read from it.
