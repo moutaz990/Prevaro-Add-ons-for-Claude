@@ -1,0 +1,12 @@
+# مراجعة: Leonxlnx/taste-skill
+- **المصدر:** https://github.com/Leonxlnx/taste-skill @ `f6b76575f949707b4e3c37cd86cb44b0b98643e8` (2026-11-07)، رخصة MIT، الإصدار 2.5.1.
+- **ما يُثبَّت:** مجلد `skills/taste-skill` فقط (≈40MB، معظمه أصول بصرية) إلى `~/.claude/skills/design-taste-frontend`.
+- **لم نستخدم `npx skills add`:** أداة `skills` تجلب أحدث نسخة ولا تثبّت commit؛ نسخنا المجلد من commit مراجَع (انظر DECISIONS.md).
+- **install script:** لا يوجد في المهارة.
+- **hooks:** في رأس `SKILL.md` يوجد `Stop` hook (bash) يبحث عن `scripts/gate.mjs` ويشغّله بـ `node ... --hook claude` (مهلة 600 ث).
+  - `gate.mjs` يخرج فوراً (exit 0) إن لم يوجد `.taste-skill/build.json` في مجلد المشروع، أي لا يعمل إلا أثناء بناء موقع بالمهارة.
+  - عند العمل: يشغّل Chrome headless محلياً على 127.0.0.1 لفحص الصفحة، ويكتب في `.taste-skill/` داخل المشروع فقط.
+  - على Windows يحتاج Git Bash.
+- **الشبكة:** طلبات `fetch` إلى صفحة المشروع المحلية، وخطوط Google، و jsDelivr، وصور Wikimedia/Picsum/Unsplash المرخّصة، و overpass-api.de (سكربت خرائط اختياري). لا إرسال لبيانات المستخدم ولا مفاتيح ولا telemetry.
+- **أوامر خطرة:** `rmSync` محصورة في مجلدات profile مؤقتة لـ Chrome ومجلد المخرجات.
+- **القرار:** مقبول.

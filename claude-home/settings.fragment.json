@@ -1,0 +1,23 @@
+{
+  "_comment": "Merged additively into ~/.claude/settings.json by install/lib/kit.mjs merge-settings. Existing keys are kept.",
+  "env": {
+    "HYPERFRAMES_NO_TELEMETRY": "1",
+    "HYPERFRAMES_SKIP_SKILLS": "1"
+  },
+  "autoCompactEnabled": true,
+  "permissions": {
+    "deny": [
+      "Read(**/node_modules/**)",
+      "Read(**/.git/**)",
+      "Read(**/dist/**)",
+      "Read(**/build/**)",
+      "Read(**/.next/**)",
+      "Read(**/venv/**)",
+      "Read(**/.venv/**)",
+      "Read(**/*.mp4)",
+      "Read(**/*.zip)",
+      "Read(**/.env)",
+      "Read(**/.env.*)"
+    ]
+  }
+}

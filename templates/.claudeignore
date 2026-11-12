@@ -1,0 +1,14 @@
+# Prevaro Add-ons for Claude ignore list.
+# NOTE: Claude Code 2.1.322 does not read .claudeignore (verified: no reference in the binary).
+# The same patterns are enforced through permissions.deny in ~/.claude/settings.json
+# (see claude-home/settings.fragment.json). This file is kept as documentation and
+# for tools that do read .claudeignore.
+node_modules/
+.git/
+dist/
+build/
+.next/
+venv/
+.venv/
+*.mp4
+*.zip

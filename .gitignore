@@ -1,0 +1,15 @@
+# Never commit secrets or client data
+.env
+.env.*
+*.key
+*.pem
+secrets/
+client-data/
+# Local artifacts
+node_modules/
+*.zip
+*.log
+verify/out/
+__pycache__/
+*.pyc
+.venv/

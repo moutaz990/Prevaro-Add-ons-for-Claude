@@ -1,0 +1,20 @@
+{
+  "_comment": "Installed by install.ps1/install.sh with `npm ci --ignore-scripts`. package-lock.json pins the full tree (122 packages, no install scripts). overrides force third-party packages to releases >= 14 days old; the @mlightcad/* family stays on its single stable release 1.7.8 (see reviews/10-cad-mcp-server.md).",
+  "name": "prevaro-cad-mcp-server",
+  "private": true,
+  "description": "Pinned install of @mlightcad/cad-mcp-server (lockfile pins the full tree).",
+  "dependencies": {
+    "@mlightcad/cad-mcp-server": "1.7.8"
+  },
+  "overrides": {
+    "@hono/node-server": "2.1.5",
+    "encodeurl": "2.0.1",
+    "express-rate-limit": "8.7.1",
+    "hono": "4.13.14",
+    "ip-address": "10.7.5",
+    "jose": "6.2.13",
+    "playwright": "1.64.1",
+    "playwright-core": "1.64.1",
+    "tslib": "2.8.1"
+  }
+}

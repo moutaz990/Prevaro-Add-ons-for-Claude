@@ -1,0 +1,19 @@
+{
+  "name": "prevaro-addons",
+  "description": "Prevaro Add-ons for Claude: third-party plugins pinned to reviewed commits.",
+  "owner": {
+    "name": "Prevaro Add-ons for Claude"
+  },
+  "plugins": [
+    {
+      "name": "auto-handoff",
+      "description": "alexknowshtml/claude-auto-handoff pinned to the reviewed commit (see reviews/03-auto-handoff.md).",
+      "version": "0.8.6",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/alexknowshtml/claude-auto-handoff.git",
+        "sha": "8d762ce726c962268e2dbe24c1c60f0889a2fcde"
+      }
+    }
+  ]
+}

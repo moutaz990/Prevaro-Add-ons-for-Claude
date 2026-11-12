@@ -1,0 +1,189 @@
+{
+  "_comment": "Pinned sources for Prevaro Add-ons for Claude. Reviewed 2026-11-10/12. Do not change a pin without a new review in reviews/.",
+  "skills": [
+    {
+      "name": "design-taste-frontend",
+      "repo": "https://github.com/Leonxlnx/taste-skill",
+      "commit": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+      "path": "skills/taste-skill",
+      "phase": 1,
+      "review": "reviews/01-taste-skill.md"
+    },
+    {
+      "name": "hairline-create",
+      "repo": "https://github.com/lucasmarkes/hairline",
+      "commit": "37d2e78dcb333ab30c3338e28ed4a690364ea014",
+      "path": "skills/hairline-create",
+      "phase": 1,
+      "review": "reviews/01-hairline.md"
+    },
+    {
+      "name": "hairline-adopt",
+      "repo": "https://github.com/lucasmarkes/hairline",
+      "commit": "37d2e78dcb333ab30c3338e28ed4a690364ea014",
+      "path": "skills/hairline-adopt",
+      "phase": 1,
+      "review": "reviews/01-hairline.md"
+    },
+    {
+      "name": "frontend-design",
+      "repo": "https://github.com/anthropics/skills",
+      "commit": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+      "path": "skills/frontend-design",
+      "phase": 1,
+      "review": "reviews/01-anthropic-skills.md"
+    },
+    {
+      "name": "webapp-testing",
+      "repo": "https://github.com/anthropics/skills",
+      "commit": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+      "path": "skills/webapp-testing",
+      "phase": 1,
+      "review": "reviews/01-anthropic-skills.md"
+    },
+    {
+      "name": "web-artifacts-builder",
+      "repo": "https://github.com/anthropics/skills",
+      "commit": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+      "path": "skills/web-artifacts-builder",
+      "phase": 1,
+      "review": "reviews/01-anthropic-skills.md"
+    },
+    {
+      "name": "canvas-design",
+      "repo": "https://github.com/anthropics/skills",
+      "commit": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+      "path": "skills/canvas-design",
+      "phase": 1,
+      "review": "reviews/01-anthropic-skills.md"
+    },
+    {
+      "name": "theme-factory",
+      "repo": "https://github.com/anthropics/skills",
+      "commit": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+      "path": "skills/theme-factory",
+      "phase": 1,
+      "review": "reviews/01-anthropic-skills.md"
+    },
+    {
+      "name": "brand-guidelines",
+      "repo": "https://github.com/anthropics/skills",
+      "commit": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+      "path": "skills/brand-guidelines",
+      "phase": 1,
+      "review": "reviews/01-anthropic-skills.md"
+    },
+    {
+      "name": "mcp-builder",
+      "repo": "https://github.com/anthropics/skills",
+      "commit": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+      "path": "skills/mcp-builder",
+      "phase": 1,
+      "review": "reviews/01-anthropic-skills.md"
+    },
+    {
+      "name": "hyperframes",
+      "repo": "https://github.com/heygen-com/hyperframes",
+      "commit": "85fdc9aa888b4d26c8150fd09acae7b23fb392f5",
+      "tag": "v0.8.206",
+      "path": "skills/hyperframes",
+      "phase": 2,
+      "review": "reviews/02-hyperframes.md"
+    },
+    {
+      "name": "hyperframes-cli",
+      "repo": "https://github.com/heygen-com/hyperframes",
+      "commit": "85fdc9aa888b4d26c8150fd09acae7b23fb392f5",
+      "tag": "v0.8.206",
+      "path": "skills/hyperframes-cli",
+      "phase": 2,
+      "review": "reviews/02-hyperframes.md"
+    }
+  ],
+  "npm": [
+    {
+      "name": "hyperframes",
+      "version": "0.8.206",
+      "global": true,
+      "phase": 2
+    }
+  ],
+  "mcp": [
+    {
+      "name": "playwright",
+      "package": "@playwright/mcp",
+      "version": "0.0.83",
+      "phase": 1,
+      "env": []
+    },
+    {
+      "name": "firecrawl",
+      "package": "firecrawl-mcp",
+      "version": "3.35.0",
+      "phase": 6,
+      "env": [
+        "FIRECRAWL_API_KEY"
+      ]
+    },
+    {
+      "name": "perplexity",
+      "package": "@perplexity-ai/mcp-server",
+      "version": "1.3.0",
+      "phase": 6,
+      "env": [
+        "PERPLEXITY_API_KEY"
+      ]
+    },
+    {
+      "name": "cad",
+      "package": "@mlightcad/cad-mcp-server",
+      "version": "1.7.8",
+      "phase": 8,
+      "env": [],
+      "installDir": "mcp/cad-mcp-server",
+      "entry": "node_modules/@mlightcad/cad-mcp-server/dist/cli.js",
+      "review": "reviews/10-cad-mcp-server.md",
+      "browser": {
+        "windows": "msedge",
+        "macos": "chrome if installed, else msedge if installed, else bundled chromium via the locked playwright 1.64.1"
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "id": "remotion@anthropic-plugin-directory",
+      "expectedVersion": "4.0.528",
+      "sourceSha": "b54a19c1e2448a45e205cdb434576e796114c33d",
+      "phase": 2,
+      "review": "reviews/02-remotion.md"
+    },
+    {
+      "id": "auto-handoff@prevaro-addons",
+      "expectedVersion": "0.8.6",
+      "sourceSha": "8d762ce726c962268e2dbe24c1c60f0889a2fcde",
+      "phase": 3,
+      "review": "reviews/03-auto-handoff.md",
+      "config": {
+        "viewer": "off"
+      }
+    }
+  ],
+  "agents": {
+    "repo": "https://github.com/msitarzewski/agency-agents",
+    "commit": "8ae6164602c95ca78828b148b9052460ee426885",
+    "dir": "claude-home/agents",
+    "phase": 4,
+    "review": "reviews/04-agency-agents.md",
+    "files": [
+      "ai-generated-code-auditor.md",
+      "backend-architect.md",
+      "brand-guardian.md",
+      "code-reviewer.md",
+      "content-creator.md",
+      "frontend-developer.md",
+      "network-engineer.md",
+      "ui-designer.md",
+      "ux-architect.md"
+    ]
+  }
+}
