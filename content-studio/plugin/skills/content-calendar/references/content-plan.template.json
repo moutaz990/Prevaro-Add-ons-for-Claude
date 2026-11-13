@@ -1,0 +1,46 @@
+{
+  "_about": "Content plan: pillars and their shares, topics, platforms and weekly pace. Read by scripts/content_calendar.py. Keep it in content-studio/content-plan.json in the working folder. Change it only with the owner's decision. Keys starting with _ are notes.",
+  "status": "proposed",
+  "approved_by": "",
+  "approved_on": "",
+  "_status": "proposed = not yet approved by the owner: ideas and drafts are allowed, but no row may be scheduled or published. After approval set status to approved with the owner's name and the date.",
+
+  "goal": "[TBC]",
+  "audience": ["[TBC]"],
+  "language": "[TBC]",
+  "regions": ["[TBC]"],
+  "_open": "Fill these from the owner's answers only. Never guess them.",
+
+  "week_starts": "Mon",
+  "_week_starts": "First day of the working week: Mon, Sun or Sat.",
+
+  "topics": {},
+  "_topics": "Optional. Your product or service lines, for pillars that cover one line per post. Example: {\"cctv\": {\"name\": \"CCTV\"}, \"access\": {\"name\": \"Access control\"}}. With video_endings, a topic may also carry \"ending\": \"camera\".",
+
+  "pillars": [
+    { "id": "who-we-are", "name": "Who we are", "purpose": "The fixed introduction of the brand, in its approved wording", "share": 10, "needs_topic": false, "formats": ["image", "text", "video"], "visual": "brand-card", "example": "" },
+    { "id": "what-we-do", "name": "What we do", "purpose": "One product or service explained simply: what it is, when it is needed, what we offer", "share": 35, "needs_topic": false, "formats": ["image", "carousel", "video", "thread", "text"], "visual": "generated", "example": "" },
+    { "id": "tips", "name": "Before you buy", "purpose": "A practical tip for the customer. Facts are checked by the owner; no claims", "share": 30, "needs_topic": false, "formats": ["image", "carousel", "thread", "text", "video"], "visual": "generated", "example": "" },
+    { "id": "how-we-work", "name": "How we work", "purpose": "Our method, step by step. No client names without written permission", "share": 15, "needs_topic": false, "formats": ["image", "carousel", "text", "video"], "visual": "brand-card", "example": "" },
+    { "id": "contact", "name": "Where to find us", "purpose": "Service area and how to get in touch", "share": 10, "needs_topic": false, "formats": ["image", "text"], "visual": "brand-card", "example": "" }
+  ],
+  "_pillars": "A starting proposal. Agree three to five pillars with the owner; shares must add up to 100. Set needs_topic to true on a pillar that must name one topic per post. Content outside the pillars needs the owner's approval and a plan change.",
+
+  "platforms": {
+    "linkedin": { "per_week": [2, 3], "formats": ["image", "carousel", "text", "video"], "days": { "2": ["Tue", "Thu"], "3": ["Mon", "Wed", "Fri"] } },
+    "x": { "per_week": [2, 3], "formats": ["image", "text", "thread", "video"], "days": { "2": ["Tue", "Thu"], "3": ["Mon", "Wed", "Fri"] } },
+    "instagram": { "per_week": [2, 2], "formats": ["image", "carousel", "video"], "days": { "2": ["Mon", "Thu"] } },
+    "facebook": { "per_week": [2, 2], "formats": ["image", "carousel", "video"], "days": { "2": ["Mon", "Thu"] } },
+    "youtube": { "per_week": [0, 1], "formats": ["video"], "days": { "1": ["Fri"] } },
+    "tiktok": { "per_week": [0, 1], "formats": ["video"], "days": { "1": ["Wed"] } }
+  },
+  "_platforms": "per_week = [lowest, highest] posts per week. days = proposed posting days for each pace. These are placeholders to agree with the owner, not advice. Remove platforms you do not use. Optional per platform: \"visual_must_be\": \"real\".",
+
+  "visuals": ["generated", "real", "brand-card"],
+  "_visuals": "generated = AI-generated picture or clip, shown as illustrative. real = a real photo or clip with confirmed rights. brand-card = a card in the brand colours with no picture.",
+
+  "statuses": ["idea", "concept_approved", "sample_approved", "final_approved", "scheduled", "published", "dropped"],
+  "share_tolerance": 15,
+  "banned_words": [],
+  "_video_endings": "Optional. To check that every video row names one closing clip, add: \"video_endings\": {\"default\": \"brand\"} and, where a topic has its own ending, \"ending\" on that topic."
+}

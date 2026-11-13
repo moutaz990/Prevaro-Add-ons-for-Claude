@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "typefully": {
+      "type": "http",
+      "url": "https://mcp.typefully.com/mcp"
+    },
+    "buffer": {
+      "type": "http",
+      "url": "https://mcp.buffer.com/mcp"
+    }
+  }
+}

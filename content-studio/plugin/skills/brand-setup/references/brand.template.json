@@ -1,0 +1,37 @@
+{
+  "_about": "Brand profile read by the post-composer script. Keep it in content-studio/brand.json in your working folder. File paths are relative to this file's folder. Keys starting with _ are notes.",
+  "name": "[your brand name]",
+  "language": "ar",
+  "_language": "Default language of post text: ar, en, ... Right-to-left is applied for ar, fa, ur, he.",
+
+  "colors": {
+    "background": "#12355B",
+    "text": "#F5F7FA",
+    "accent": "#F4B942"
+  },
+  "_colors": "background = the brand colour behind the text. text = headline colour (contrast with background must be 4.5 or more). accent = small line and label (contrast 3 or more). Optional: background_dark, background_light, muted; they are derived when left out.",
+
+  "font": {
+    "family": "Tajawal",
+    "files": {
+      "400": "fonts/Tajawal-Regular.ttf",
+      "500": "fonts/Tajawal-Medium.ttf",
+      "700": "fonts/Tajawal-Bold.ttf"
+    }
+  },
+  "_font": "family = the font's name. files is optional: leave it out when the font is installed on the computer (regular and bold are needed). The font must cover every language you post in.",
+
+  "logo": {
+    "default": "logo-on-background.svg",
+    "en": "logo-en-on-background.svg",
+    "mark": "mark-on-background.svg"
+  },
+  "_logo": "default = the official logo version that reads well on colors.background (SVG, PNG, JPEG or WebP). Optional: one file per language code, and mark = the symbol alone, used as a faint ornament on cards. The logo is used as it is, never redrawn.",
+
+  "illustrative_tag": {
+    "ar": "صورة توضيحية",
+    "en": "Illustrative image"
+  },
+  "banned_words": [],
+  "_banned_words": "Words and claims that must never appear in a post, e.g. \"cheapest\", \"guaranteed\". The script refuses text that contains one."
+}

@@ -1,10 +1,16 @@
 {
   "name": "prevaro-addons",
-  "description": "Prevaro Add-ons for Claude: third-party plugins pinned to reviewed commits.",
+  "description": "Prevaro Add-ons for Claude: the Content Studio plugin, and third-party plugins pinned to reviewed commits.",
   "owner": {
     "name": "Prevaro Add-ons for Claude"
   },
   "plugins": [
+    {
+      "name": "content-studio",
+      "description": "Social media content from plan to post, for any brand: brand setup, content plan and calendar, final post image with your logo, handover for approval, and a morning report. Prepares drafts; the owner approves every post.",
+      "version": "0.1.0",
+      "source": "./content-studio/plugin"
+    },
     {
       "name": "auto-handoff",
       "description": "alexknowshtml/claude-auto-handoff pinned to the reviewed commit (see reviews/03-auto-handoff.md).",

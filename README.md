@@ -13,6 +13,7 @@
 | **1** | [**Gemini Images & Video**](#1-gemini-images--video) | توليد الصور وتعديلها وتوليد فيديو قصير عبر Google Gemini، بمفتاحك | تطبيق Claude Desktop على **Mac و Windows** | ملف واحد يُفتح بنقرتين |
 | **2** | [**مهارات للمحادثة**](#2-مهارات-للمحادثة) | 7 مهارات: صفحات ويب، ثيمات، ملصقات، رسوم خطية تفاعلية، ومهارة مرافقة لإضافة Gemini | Claude في المتصفح أو التطبيق | رفع ملف ZIP، بلا تثبيت |
 | **3** | [**حزمة Claude Code**](#3-حزمة-claude-code) | مهارات تصميم وفيديو، قراءة مخططات CAD، 9 وكلاء متخصصين | Claude Code على Mac و Windows و Linux | أمر واحد |
+| **4** | [**Content Studio**](#4-content-studio) | مسؤول محتوى لوسائل التواصل: خطة، صورة المنشور بشعارك وخطك، تسليم للاعتماد، وتقرير صباحي عن حساباتك ومنافسيك | تطبيق Claude Desktop (Cowork) و Claude Code | ملف بلغن واحد، أو أمران |
 
 لا تعرف من أين تبدأ؟ إن كنت تستخدم تطبيق Claude على حاسوبك فابدأ بالأولى.
 
@@ -131,6 +132,21 @@ bash ~/prevaro-addons/install/uninstall.sh
 
 ---
 
+## 4. Content Studio
+بلغن يجعل Claude مسؤول محتوى لوسائل التواصل، لأي شركة: تحفظ هويتك مرة واحدة (الشعار، الألوان، الخط)، ثم يخطط المحتوى، ويركّب صورة المنشور النهائية بمقاسات المنصات، ويسلّمك كل منشور للاعتماد، ويعطيك تقريراً صباحياً عن حساباتك ومنافسيك.
+
+**التنزيل:** [content-studio-0.1.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/content-studio/content-studio-0.1.0.plugin)
+
+**ما يجب أن تعرفه:**
+- **Claude يُعدّ وأنت تعتمد.** لا يُنشر شيء ولا يُجدول ولا يُصرف مال قبل موافقتك على ذلك الشيء بعينه.
+- **بلا كلمات سر.** تربط حساباتك داخل أداة جدولة (Typefully أو Buffer) وتسجّل الدخول في صفحتها، والتحقق بخطوتين يتم هناك. بلا أداة جدولة يجهّز لك مجلداً بالصورة والنص ترفعه بيدك.
+- صورة المنشور النهائية تحتاج Python 3 و Chrome أو Edge على جهازك.
+- **لم يُجرَّب بعد داخل Claude Desktop حقيقي.** السكربتات مختبَرة آلياً فقط.
+
+الشرح الكامل والتثبيت: [content-studio/](content-studio/).
+
+---
+
 ## الأمان
 - **الإصدارات:** ثابتة، وحزم npm المختارة عمرها 14 يوماً على الأقل (باستثناء موثق واحد).
 - **سكربتات التثبيت الخارجية:** لا تُشغَّل.
@@ -159,6 +175,7 @@ A set of **free add-ons for Claude**; pick the ones you need. Each one is securi
 | **1** | [**Gemini Images & Video**](#1-gemini-images--video-1) | Generate and edit images and generate short videos with Google Gemini, using your own key | The Claude Desktop app on **Mac and Windows** | One file, two clicks |
 | **2** | [**Chat skills**](#2-chat-skills) | 7 skills: web pages, themes, posters, interactive line figures, and a companion skill for the Gemini extension | Claude in the browser or the app | Upload a ZIP, nothing to install |
 | **3** | [**Claude Code pack**](#3-claude-code-pack) | Design and video skills, CAD drawing reader, 9 specialist subagents | Claude Code on Mac, Windows and Linux | One command |
+| **4** | [**Content Studio**](#4-content-studio-1) | A social media content lead: plan, final post image with your logo and font, handover for approval, and a morning report on your accounts and competitors | Claude Desktop (Cowork) and Claude Code | One plugin file, or two commands |
 
 Not sure where to start? If you use the Claude app on your computer, start with the first one.
 
@@ -226,6 +243,19 @@ git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git ~/prevaro-
 **Uninstall:** run `install/uninstall.ps1` (Windows) or `install/uninstall.sh` (Mac/Linux). It removes everything recorded in the install ledger and restores your previous `settings.json`.
 
 **Where it works:** everything works in Claude Code (terminal, desktop Code tab, IDE). Skills can also be uploaded to Claude chat as ZIP files. Agents, plugins and MCP servers are Claude Code only.
+
+### 4. Content Studio
+A plugin that makes Claude a social media content lead for any company: save your brand once (logo, colours, font), then it plans the content, composes the final post image at platform sizes, hands each post over for approval, and gives you a morning report on your accounts and competitors.
+
+**Download:** [content-studio-0.1.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/content-studio/content-studio-0.1.0.plugin)
+
+**Good to know:**
+- **Claude prepares, you approve.** Nothing is published, scheduled or paid for before your yes to that specific thing.
+- **No passwords.** You connect your accounts inside a scheduling tool (Typefully or Buffer) and sign in on its own page; two-step verification happens there. Without a scheduler it prepares a folder with the image and caption for you to upload by hand.
+- The final post image needs Python 3 and Chrome or Edge on your computer.
+- **Not yet tried inside a real Claude Desktop install.** The scripts are tested automatically only.
+
+Full instructions and install: [content-studio/](content-studio/README.md#english).
 
 ### Security
 Versions are pinned and the chosen npm packages are at least 14 days old (one documented exception). External install scripts are not run. Telemetry is off and no server is exposed on the network. Security reviews are in [reviews/](reviews/); sources and versions are in [manifest.json](manifest.json). Keys stay on your computer; none are in this repository.
