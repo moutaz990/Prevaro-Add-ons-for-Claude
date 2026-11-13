@@ -44,6 +44,14 @@
 4. احفظ الإعدادات وتأكد أن الإضافة **مفعّلة**.
 5. افتح محادثة جديدة واكتب: «ولّد صورة مربعة لكاميرا مراقبة بيضاء على خلفية رمادية». وافق على استخدام الأداة، وتجد الصورة في المجلد الذي اخترته.
 
+## المهارة المرافقة (اختيارية، موصى بها)
+الإضافة تعطي Claude الأدوات. المهارة تعلّمه استخدامها جيداً: مقاسات جاهزة (منشور مربع، ستوري، غلاف X، غلاف لينكدإن)، كتابة وصف جيد للصورة والفيديو، عدم طلب نص عربي داخل الصورة، وعرض التكلفة وانتظار «نعم» قبل أي فيديو.
+
+1. نزّل [gemini-visual-generation.zip](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/chat-skills/gemini-visual-generation.zip).
+2. في Claude: **Customize ← Skills ← + ← Upload a skill**، واختر الملف كما هو دون فك الضغط، ثم فعّل المهارة.
+
+نص المهارة: [skill/gemini-visual-generation/SKILL.md](skill/gemini-visual-generation/SKILL.md).
+
 ## إن لم يعمل
 | المشكلة | الحل |
 |---|---|
@@ -133,6 +141,14 @@ After installing, tell Claude what you want, for example "generate a square imag
 
 4. Save the settings and make sure the extension is **enabled**.
 5. Open a new chat and type: "Generate a square image of a white security camera on a grey background." Allow the tool, and find the image in the folder you chose.
+
+### Companion skill (optional, recommended)
+The extension gives Claude the tools. The skill teaches it to use them well: ready-made sizes (square post, story, X header, LinkedIn cover), how to write a good image or video prompt, never asking for Arabic text inside the image, and showing the cost and waiting for "yes" before any video.
+
+1. Download [gemini-visual-generation.zip](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/chat-skills/gemini-visual-generation.zip).
+2. In Claude go to **Customize → Skills → + → Upload a skill**, select the ZIP as is (do not unzip it), and enable it.
+
+The skill text: [skill/gemini-visual-generation/SKILL.md](skill/gemini-visual-generation/SKILL.md).
 
 ### If it does not work
 | Problem | Fix |

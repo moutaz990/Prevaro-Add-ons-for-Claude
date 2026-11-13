@@ -10,6 +10,7 @@
 | `mcp-builder.zip` | يرشدك لبناء خادم MCP يربط Claude بأي نظام | Apache-2.0 |
 | `hairline-create.zip` | يرسم شكلاً خطياً أيزومترياً تفاعلياً في ملف HTML واحد | MIT |
 | `hairline-adopt.zip` | يحوّل شعاراً أو أيقونة SVG إلى رسم خطي تفاعلي | MIT |
+| `gemini-visual-generation.zip` | يرافق إضافة [Gemini Images & Video](../gemini-media/): مقاسات جاهزة للمنشور والستوري والأغلفة، كتابة وصف جيد للصورة والفيديو، وعرض التكلفة قبل أي فيديو. **بلا الإضافة لا يولّد شيئاً** | MIT |
 
 ### طريقة الرفع (من المتصفح أو تطبيق الكمبيوتر)
 1. حمّل الملف: افتحه في GitHub ثم اضغط **Download raw file**.
@@ -32,4 +33,6 @@
 2. In claude.ai, enable **Settings > Capabilities > Code execution and file creation**.
 3. Go to **Customize > Skills > + > Upload a skill**, select the ZIP as is (do not unzip it), and enable it.
 
-Each package keeps the upstream instructions and files unchanged. The only change is the frontmatter: `name` plus a description of 200 characters or less, to meet the upload rules. Source, commit and license are in `NOTICE.txt` and `LICENSE.txt` inside each ZIP.
+`gemini-visual-generation.zip` goes with the [Gemini Images & Video](../gemini-media/README.md#english) extension: ready-made sizes for posts, stories and covers, how to write image and video prompts, and showing the cost before any video. It generates nothing without the extension, and it is written for this repository (MIT).
+
+Each of the other packages keeps the upstream instructions and files unchanged. The only change is the frontmatter: `name` plus a description of 200 characters or less, to meet the upload rules. Source, commit and license are in `NOTICE.txt` and `LICENSE.txt` inside each ZIP.

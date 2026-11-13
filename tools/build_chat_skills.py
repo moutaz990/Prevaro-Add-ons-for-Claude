@@ -3,6 +3,7 @@
 
 For each skill in chat-skills/chat-skills.json:
   * fetch only that folder at the pinned commit (git sparse + partial checkout),
+    or, for an entry with "local", take the folder from this repository,
   * rewrite the SKILL.md frontmatter to `name` + a <=200-char `description` (chat upload limits),
   * add the upstream LICENSE and a NOTICE (source, commit, changes),
   * write chat-skills/<name>.zip with the skill folder at the ZIP root (deterministic timestamps).
@@ -33,28 +34,39 @@ def main():
         name, desc = item["name"], item["description"]
         assert len(name) <= 64 and re.fullmatch(r"[a-z0-9-]+", name), name
         assert len(desc) <= 200, f"{name}: description is {len(desc)} chars"
-        src = pinned[name]
+        local = item.get("local")
         with tempfile.TemporaryDirectory() as tmp:
             tmp = Path(tmp)
-            fetch(src["repo"], src["commit"], [src["path"]], tmp)
-            if item["license_file"].startswith("../"):
-                # License sits at the repo root: read it from the commit (blob fetched on demand).
-                lic_text = subprocess.run(["git", "show", "FETCH_HEAD:LICENSE"], cwd=tmp, check=True,
-                                          capture_output=True, text=True).stdout
-            else:
-                lic_text = (tmp / src["path"] / item["license_file"]).read_text()
             stage = tmp / "stage" / name
-            shutil.copytree(tmp / src["path"], stage, ignore=shutil.ignore_patterns(".git"))
+            if local:
+                # A skill written for this repository: packaged from its own folder, under the repository license.
+                lic_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
+                shutil.copytree(ROOT / local, stage)
+                notice = (f"Source: this repository ({local})\nLicense: {item['license']} (see LICENSE.txt)\n"
+                          "Changes for Claude chat upload: SKILL.md frontmatter reduced to `name` and a shortened `description` (<= 200 chars).\n"
+                          "Packaged by Prevaro Add-ons for Claude.\n")
+                origin = "local"
+            else:
+                src = pinned[name]
+                fetch(src["repo"], src["commit"], [src["path"]], tmp)
+                if item["license_file"].startswith("../"):
+                    # License sits at the repo root: read it from the commit (blob fetched on demand).
+                    lic_text = subprocess.run(["git", "show", "FETCH_HEAD:LICENSE"], cwd=tmp, check=True,
+                                              capture_output=True, text=True).stdout
+                else:
+                    lic_text = (tmp / src["path"] / item["license_file"]).read_text()
+                shutil.copytree(tmp / src["path"], stage, ignore=shutil.ignore_patterns(".git"))
+                notice = (f"Source: {src['repo']} ({src['path']}) at commit {src['commit']}\nLicense: {item['license']} (see LICENSE.txt)\n"
+                          "Changes for Claude chat upload: SKILL.md frontmatter reduced to `name` and a shortened `description` (<= 200 chars).\n"
+                          "Instructions, scripts and assets are unchanged.\nPackaged by Prevaro Add-ons for Claude.\n")
+                origin = src["commit"][:7]
             skill_md = stage / "SKILL.md"
             text = skill_md.read_text(encoding="utf-8")
             m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
             body = text[m.end():]
             skill_md.write_text(f"---\nname: {name}\ndescription: {json.dumps(desc)}\n---\n{body}", encoding="utf-8")
             (stage / "LICENSE.txt").write_text(lic_text, encoding="utf-8")
-            (stage / "NOTICE.txt").write_text(
-                f"Source: {src['repo']} ({src['path']}) at commit {src['commit']}\nLicense: {item['license']} (see LICENSE.txt)\n"
-                "Changes for Claude chat upload: SKILL.md frontmatter reduced to `name` and a shortened `description` (<= 200 chars).\n"
-                "Instructions, scripts and assets are unchanged.\nPackaged by Prevaro Add-ons for Claude.\n", encoding="utf-8")
+            (stage / "NOTICE.txt").write_text(notice, encoding="utf-8")
             zpath = OUT / f"{name}.zip"
             with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
                 for f in sorted(stage.rglob("*")):
@@ -63,7 +75,7 @@ def main():
                         info.compress_type = zipfile.ZIP_DEFLATED
                         info.external_attr = 0o644 << 16
                         z.writestr(info, f.read_bytes())
-            print(f"{name:16} {zpath.stat().st_size // 1024:>6} KB  {src['commit'][:7]}")
+            print(f"{name:24} {zpath.stat().st_size // 1024:>6} KB  {origin}")
     return 0
 
 if __name__ == "__main__":

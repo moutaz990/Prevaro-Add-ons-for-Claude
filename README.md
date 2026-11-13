@@ -11,7 +11,7 @@
 | | الإضافة | ماذا تضيف لـClaude | أين تعمل | التثبيت |
 |---|---|---|---|---|
 | **1** | [**Gemini Images & Video**](#1-gemini-images--video) | توليد الصور وتعديلها وتوليد فيديو قصير عبر Google Gemini، بمفتاحك | تطبيق Claude Desktop على **Mac و Windows** | ملف واحد يُفتح بنقرتين |
-| **2** | [**مهارات للمحادثة**](#2-مهارات-للمحادثة) | 6 مهارات تصميم: صفحات ويب، ثيمات، ملصقات، رسوم خطية تفاعلية | Claude في المتصفح أو التطبيق | رفع ملف ZIP، بلا تثبيت |
+| **2** | [**مهارات للمحادثة**](#2-مهارات-للمحادثة) | 7 مهارات: صفحات ويب، ثيمات، ملصقات، رسوم خطية تفاعلية، ومهارة مرافقة لإضافة Gemini | Claude في المتصفح أو التطبيق | رفع ملف ZIP، بلا تثبيت |
 | **3** | [**حزمة Claude Code**](#3-حزمة-claude-code) | مهارات تصميم وفيديو، قراءة مخططات CAD، 9 وكلاء متخصصين | Claude Code على Mac و Windows و Linux | أمر واحد |
 
 لا تعرف من أين تبدأ؟ إن كنت تستخدم تطبيق Claude على حاسوبك فابدأ بالأولى.
@@ -36,12 +36,14 @@
 - الأوصاف والصور التي تطلب تعديلها تُرسل إلى Google. لا ترسل بيانات عملاء أو بيانات شخصية.
 - **لم تُجرَّب بعد داخل Claude Desktop حقيقي ولا بمفتاح حقيقي.** هي مختبَرة آلياً فقط، فجرّب صورة واحدة أولاً.
 
+**مهارة مرافقة (اختيارية، موصى بها):** [gemini-visual-generation.zip](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/chat-skills/gemini-visual-generation.zip) تعلّم Claude مقاسات المنشور والستوري والأغلفة، وكتابة وصف جيد، وعرض التكلفة قبل أي فيديو. ترفعها من **Customize ← Skills ← Upload a skill**.
+
 الشرح الكامل، وحل المشاكل، والكود المصدري: [gemini-media/](gemini-media/).
 
 ---
 
 ## 2. مهارات للمحادثة
-6 ملفات ZIP جاهزة للرفع إلى Claude Chat، دون تثبيت أي شيء على الحاسوب: تصميم صفحات ويب، ثيمات، ملصقات، بناء خوادم MCP، ورسوم خطية تفاعلية.
+7 ملفات ZIP جاهزة للرفع إلى Claude Chat، دون تثبيت أي شيء على الحاسوب: تصميم صفحات ويب، ثيمات، ملصقات، بناء خوادم MCP، رسوم خطية تفاعلية، ومهارة مرافقة لإضافة Gemini.
 
 1. نزّل الملف من [chat-skills/](chat-skills/) (افتحه في GitHub ثم اضغط **Download raw file**).
 2. في claude.ai: **Customize ← Skills ← + ← Upload a skill**، واختر ملف ZIP كما هو دون فك الضغط.
@@ -155,7 +157,7 @@ A set of **free add-ons for Claude**; pick the ones you need. Each one is securi
 | | Add-on | What it adds to Claude | Where it works | Install |
 |---|---|---|---|---|
 | **1** | [**Gemini Images & Video**](#1-gemini-images--video-1) | Generate and edit images and generate short videos with Google Gemini, using your own key | The Claude Desktop app on **Mac and Windows** | One file, two clicks |
-| **2** | [**Chat skills**](#2-chat-skills) | 6 design skills: web pages, themes, posters, interactive line figures | Claude in the browser or the app | Upload a ZIP, nothing to install |
+| **2** | [**Chat skills**](#2-chat-skills) | 7 skills: web pages, themes, posters, interactive line figures, and a companion skill for the Gemini extension | Claude in the browser or the app | Upload a ZIP, nothing to install |
 | **3** | [**Claude Code pack**](#3-claude-code-pack) | Design and video skills, CAD drawing reader, 9 specialist subagents | Claude Code on Mac, Windows and Linux | One command |
 
 Not sure where to start? If you use the Claude app on your computer, start with the first one.
@@ -178,10 +180,12 @@ Tell Claude "generate an image of…", "edit this image and make the background 
 - Prompts, and images you ask to edit, are sent to Google. Do not send client data or personal data.
 - **It has not yet been tried inside a real Claude Desktop or with a real key.** It is tested automatically only, so try one image first.
 
+**Companion skill (optional, recommended):** [gemini-visual-generation.zip](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/chat-skills/gemini-visual-generation.zip) teaches Claude the sizes for posts, stories and covers, how to write a good prompt, and to show the cost before any video. Upload it under **Customize → Skills → Upload a skill**.
+
 Full instructions, troubleshooting and the source code: [gemini-media/](gemini-media/README.md#english).
 
 ### 2. Chat skills
-Six ready ZIP files to upload to Claude chat. Nothing to install on the computer.
+Seven ready ZIP files to upload to Claude chat. Nothing to install on the computer.
 
 1. Download a ZIP from [chat-skills/](chat-skills/) (open it on GitHub, then **Download raw file**).
 2. In claude.ai go to **Customize → Skills → + → Upload a skill** and select the ZIP as is (do not unzip it).

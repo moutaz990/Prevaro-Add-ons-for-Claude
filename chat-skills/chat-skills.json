@@ -12,6 +12,8 @@
     {"name": "hairline-create", "license_file": "../../LICENSE", "license": "MIT",
      "description": "Create one interactive isometric line figure in the Hairline style, delivered as a single self-contained HTML file. Use for /hairline-create or a request for a Hairline figure."},
     {"name": "hairline-adopt", "license_file": "../../LICENSE", "license": "MIT",
-     "description": "Turn an SVG icon, logo or illustration into an interactive isometric Hairline line figure that answers the pointer. Use for /hairline-adopt or when given an SVG to bring to life."}
+     "description": "Turn an SVG icon, logo or illustration into an interactive isometric Hairline line figure that answers the pointer. Use for /hairline-adopt or when given an SVG to bring to life."},
+    {"name": "gemini-visual-generation", "local": "gemini-media/skill/gemini-visual-generation", "license_file": "LICENSE", "license": "MIT",
+     "description": "Generate and edit images and make short videos with the Gemini Images & Video extension. Use for an image, post visual, story, cover, image edit or short video. Shows cost before any video."}
   ]
 }
