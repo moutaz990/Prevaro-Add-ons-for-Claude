@@ -30,7 +30,7 @@ import { ConfigError, mergePricing, microsToUsd, usdToMicros, type Pricing } fro
 import { sniffImageMime } from "./sniff";
 import { StateStore, type Job } from "./state";
 
-export const VERSION = "1.0.0";
+export const VERSION = "1.0.1";
 const GOOGLE_API = "https://generativelanguage.googleapis.com";
 const DATA_WARNING =
   "تنبيه: لا ترسل بيانات عملاء أو بيانات شخصية؛ الأوصاف والصور تذهب إلى Google. (Warning: never send client data or personal data; prompts and images are sent to Google.)";

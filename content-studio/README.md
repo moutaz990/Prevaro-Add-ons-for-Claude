@@ -1,3 +1,5 @@
+<img src="../assets/icon-content-studio.png" width="96" alt="Content Studio icon">
+
 # Content Studio — استوديو المحتوى لـClaude
 
 **العربية** | [English](#english)

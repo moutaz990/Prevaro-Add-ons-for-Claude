@@ -28,6 +28,7 @@ await build({
   logLevel: "warning",
 });
 cpSync(join(here, "manifest.json"), join(stage, "manifest.json"));
+cpSync(join(here, "icon.png"), join(stage, "icon.png")); // drawn by tools/build_assets.py
 writeFileSync(join(stage, "README.txt"), "Gemini Images & Video - Claude Desktop extension. Open this .mcpb file with Claude Desktop to install it.\n");
 
 const run = (args) => execFileSync(mcpb, args, { stdio: "inherit", shell: process.platform === "win32" });

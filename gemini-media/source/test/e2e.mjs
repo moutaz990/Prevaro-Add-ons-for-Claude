@@ -115,7 +115,13 @@ async function start(env, home = join(work, "home")) {
 
 try {
   // 1. The archive itself.
-  check("archive holds the manifest and one bundled server file", Object.keys(files).sort().join(",") === "README.txt,manifest.json,server/index.mjs", Object.keys(files).join(","));
+  check("archive holds the manifest, the icon and one bundled server file", Object.keys(files).sort().join(",") === "README.txt,icon.png,manifest.json,server/index.mjs", Object.keys(files).join(","));
+  {
+    // The icon named in the manifest is a real PNG, square, 512 px.
+    const icon = Buffer.from(files[manifest.icon] ?? []);
+    const png = icon.length > 24 && icon.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]));
+    check("the manifest icon is a 512x512 PNG", manifest.icon === "icon.png" && png && icon.readUInt32BE(16) === 512 && icon.readUInt32BE(20) === 512);
+  }
   check("manifest asks for the key as a sensitive, required setting", manifest.user_config.gemini_api_key.sensitive === true && manifest.user_config.gemini_api_key.required === true);
   check("manifest passes the key only through the environment", JSON.stringify(manifest.server.mcp_config.args).includes("user_config") === false && manifest.server.mcp_config.env.GEMINI_API_KEY === "${user_config.gemini_api_key}");
   check("the bundle needs no node_modules", existsSync(entry) && !existsSync(join(installed, "node_modules")));

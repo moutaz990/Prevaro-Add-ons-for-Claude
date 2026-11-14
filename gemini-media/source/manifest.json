@@ -2,9 +2,10 @@
   "manifest_version": "0.3",
   "name": "gemini-media",
   "display_name": "Gemini Images & Video",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate and edit images and generate short videos with Google Gemini, using your own Gemini API key. Files are saved on your computer.",
   "long_description": "Adds image generation, image editing and video generation to Claude Desktop through Google Gemini.\n\n- **Your own key.** Paste your Gemini API key once in the settings. It is stored by Claude Desktop in the operating system's secure storage and is sent only to Google.\n- **Files stay on your computer.** Results are saved to the folder you choose. Nothing is uploaded anywhere except the prompts and reference images that go to Google.\n- **Spending cap.** A monthly cap in US dollars; when it is reached the tools refuse new requests until the next month.\n\nImage and video models have no free tier: the key must belong to a Google AI Studio project with billing enabled. Do not send client data or personal data.",
+  "icon": "icon.png",
   "author": {
     "name": "Prevaro Add-ons for Claude",
     "url": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude"
@@ -20,7 +21,12 @@
     "image generation",
     "image editing",
     "video generation",
-    "google"
+    "google",
+    "ai images",
+    "text to image",
+    "text to video",
+    "mcp",
+    "claude desktop"
   ],
   "privacy_policies": [
     "https://policies.google.com/privacy",

@@ -1,3 +1,5 @@
+<img src="../assets/icon-gemini-media.png" width="96" alt="Gemini Images & Video icon">
+
 # Gemini Images & Video — إضافة لتطبيق Claude Desktop
 
 **العربية** | [English](#english)
@@ -8,10 +10,10 @@
 
 | | |
 |---|---|
-| **تنزيل الإضافة** | [gemini-media-1.0.0.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.0.mcpb) |
+| **تنزيل الإضافة** | [gemini-media-1.0.1.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.1.mcpb) |
 | **دليل التثبيت PDF (عربي + إنجليزي)** | [gemini-media-install-guide-ar-en.pdf](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-install-guide-ar-en.pdf) |
 
-> **الحالة:** الإضافة مختبَرة آلياً (35 فحصاً على الملف المحزوم نفسه، بخادم Google وهمي). لم تُجرَّب بعد داخل Claude Desktop حقيقي على Mac أو Windows، ولا على مفتاح حقيقي. جرّب صورة واحدة أولاً، وأخبرنا في [Issues](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues) إن واجهت مشكلة.
+> **الحالة:** الإضافة مختبَرة آلياً (36 فحصاً على الملف المحزوم نفسه، بخادم Google وهمي). لم تُجرَّب بعد داخل Claude Desktop حقيقي على Mac أو Windows، ولا على مفتاح حقيقي. جرّب صورة واحدة أولاً، وأخبرنا في [Issues](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues) إن واجهت مشكلة.
 
 ## ماذا تضيف إلى Claude؟
 بعد التثبيت تقول لـClaude ما تريد بالعربية أو الإنجليزية، مثل «ولّد صورة مربعة لـ…» أو «عدّل هذه الصورة واجعل الخلفية بيضاء»، فيستخدم هذه الأدوات:
@@ -30,7 +32,7 @@
 - لا شيء آخر. لا Node.js ولا أوامر.
 
 ## التثبيت
-1. نزّل الملف [gemini-media-1.0.0.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.0.mcpb).
+1. نزّل الملف [gemini-media-1.0.1.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.1.mcpb).
 2. افتحه **بنقرتين**. يفتح Claude Desktop نافذة التثبيت، فاضغط **Install**.
    - إن لم يفتح: في Claude Desktop افتح **Settings ← Extensions ← Advanced settings ← Install Extension…** واختر الملف.
 3. املأ الحقول الثلاثة:
@@ -106,10 +108,10 @@ An extension that lets Claude generate and edit images and generate short videos
 
 | | |
 |---|---|
-| **Download the extension** | [gemini-media-1.0.0.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.0.mcpb) |
+| **Download the extension** | [gemini-media-1.0.1.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.1.mcpb) |
 | **Install guide, PDF (Arabic + English)** | [gemini-media-install-guide-ar-en.pdf](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-install-guide-ar-en.pdf) |
 
-> **Status:** tested automatically (35 checks against the packed file, with a fake Google server). It has not yet been tried inside a real Claude Desktop on Mac or Windows, or with a real key. Try one image first, and open an [issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues) if something fails.
+> **Status:** tested automatically (36 checks against the packed file, with a fake Google server). It has not yet been tried inside a real Claude Desktop on Mac or Windows, or with a real key. Try one image first, and open an [issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues) if something fails.
 
 ### What it adds to Claude
 After installing, tell Claude what you want, for example "generate a square image of…" or "edit this image and make the background white". Claude then uses these tools:
@@ -128,7 +130,7 @@ After installing, tell Claude what you want, for example "generate a square imag
 - Nothing else. No Node.js, no commands.
 
 ### Install
-1. Download [gemini-media-1.0.0.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.0.mcpb).
+1. Download [gemini-media-1.0.1.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.1.mcpb).
 2. **Double-click** it. Claude Desktop opens an install window; click **Install**.
    - If nothing opens: in Claude Desktop go to **Settings → Extensions → Advanced settings → Install Extension…** and choose the file.
 3. Fill in the three fields:

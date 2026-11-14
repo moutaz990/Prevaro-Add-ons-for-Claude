@@ -23,7 +23,7 @@
 تقول لـClaude «ولّد صورة لـ…» أو «عدّل هذه الصورة واجعل الخلفية بيضاء» أو «اصنع مقطعاً من 5 ثوانٍ لـ…»، فيولّدها عبر Google Gemini ويحفظها في مجلد على جهازك.
 
 **التنزيل:**
-- الإضافة: [gemini-media-1.0.0.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.0.mcpb) (الملف نفسه لـMac و Windows)
+- الإضافة: [gemini-media-1.0.1.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.1.mcpb) (الملف نفسه لـMac و Windows)
 - دليل التثبيت PDF، عربي وإنجليزي: [gemini-media-install-guide-ar-en.pdf](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-install-guide-ar-en.pdf)
 
 **التثبيت في ثلاث خطوات:**
@@ -183,7 +183,7 @@ Not sure where to start? If you use the Claude app on your computer, start with 
 Tell Claude "generate an image of…", "edit this image and make the background white" or "make a 5-second clip of…". It generates them with Google Gemini and saves them to a folder on your computer.
 
 **Download:**
-- The extension: [gemini-media-1.0.0.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.0.mcpb) (the same file for Mac and Windows)
+- The extension: [gemini-media-1.0.1.mcpb](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-1.0.1.mcpb) (the same file for Mac and Windows)
 - Install guide, PDF, Arabic and English: [gemini-media-install-guide-ar-en.pdf](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/gemini-media/gemini-media-install-guide-ar-en.pdf)
 
 **Install in three steps:**
