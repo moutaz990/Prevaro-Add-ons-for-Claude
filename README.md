@@ -1,11 +1,26 @@
+<p align="center"><img src="assets/banner.png" alt="Prevaro Add-ons for Claude: Images & Video, Content Studio, Chat skills, Claude Code pack" width="100%"></p>
+
 # Prevaro Add-ons for Claude
 
-**العربية** | [English](#english)
+**العربية** | [English](#english) · [إخلاء المسؤولية](DISCLAIMER.md) · [الرخصة: MIT](LICENSE)
 
 ## ما هذا؟
-مجموعة **إضافات مجانية لـClaude** تختار منها ما يناسبك. كل إضافة مراجَعة أمنياً ومثبّتة على إصدار محدد، وتُثبَّت وتُزال بسهولة.
+**إضافات مجانية ومفتوحة المصدر لـClaude**، تجعله يولّد الصور والفيديو، ويدير محتوى وسائل التواصل، ويصمم صفحات وملصقات، ويقرأ مخططات CAD. تختار منها ما تحتاجه، وكل واحدة تُثبَّت في دقائق وتُزال بسهولة.
 
-**Prevaro** اسم مشروع أداة تصميم بالذكاء الاصطناعي لمخططات وتقارير أنظمة التيار الخفيف (ELV). هذه الإضافات أول جزء منشور منه.
+- **لمن؟** لمن يستخدم Claude في عمله ولا يريد أن يبرمج: أصحاب الشركات، المسوّقون، المصممون، المهندسون. وللمبرمجين في Claude Code.
+- **بكم؟** الإضافات مجانية. ما تدفعه، إن دفعت، يذهب مباشرة للخدمة التي تربطها بمفتاحك أنت (مثل Google Gemini). لا خادم وسيط ولا اشتراك عندنا.
+- **هل هي آمنة؟** كل مكوّن مراجَع ومثبّت على إصدار محدد، والمراجعات منشورة في [reviews/](reviews/). مفاتيحك تبقى على جهازك.
+- **بأي لغة؟** الشرح بالعربية والإنجليزية، والإضافات تعمل باللغتين.
+
+**Prevaro** مشروع أداة تصميم بالذكاء الاصطناعي لمخططات وتقارير أنظمة التيار الخفيف (ELV). هذه الإضافات أول جزء منشور منه.
+
+## ماذا في الداخل؟
+| الإضافة | ما فيها | الخدمات والأدوات التي تدعمها |
+|---|---|---|
+| <img src="assets/icon-gemini-media.png" width="28" align="top"> **Gemini Images & Video** | 5 أدوات: توليد صورة، تعديل صورة، توليد فيديو، متابعة المهمة، عدّاد الصرف | Google Gemini (بمفتاحك) · Claude Desktop على Mac و Windows |
+| <img src="assets/icon-content-studio.png" width="28" align="top"> **Content Studio** | 7 مهارات: إعداد الهوية، مسؤول المحتوى، خطة وتقويم، تركيب صورة المنشور، التسليم للنشر، تقرير الصباح، توليد الصور. و3 إضافات ربط اختيارية | Typefully · Buffer · Metricool (بمفتاحك أو بتسجيل الدخول) · Claude Desktop (Cowork) و Claude Code |
+| **مهارات للمحادثة** | 7 مهارات: صفحات ويب، ثيمات، ملصقات، رسمان خطيان تفاعليان، بناء خوادم MCP، مهارة Gemini | claude.ai في المتصفح والتطبيق |
+| **حزمة Claude Code** | 12 مهارة، 9 وكلاء متخصصين، خادم CAD، وبلغنز فيديو | Playwright · HyperFrames · Remotion · مخططات DWG و DXF · Firecrawl و Perplexity (اختياريان، بمفتاحك) · Claude Code على Mac و Windows و Linux |
 
 ## اختر ما تحتاجه
 | | الإضافة | ماذا تضيف لـClaude | أين تعمل | التثبيت |
@@ -135,11 +150,12 @@ bash ~/prevaro-addons/install/uninstall.sh
 ## 4. Content Studio
 بلغن يجعل Claude مسؤول محتوى لوسائل التواصل، لأي شركة: تحفظ هويتك مرة واحدة (الشعار، الألوان، الخط)، ثم يخطط المحتوى، ويركّب صورة المنشور النهائية بمقاسات المنصات، ويسلّمك كل منشور للاعتماد، ويعطيك تقريراً صباحياً عن حساباتك ومنافسيك.
 
-**التنزيل:** [content-studio-0.1.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/content-studio/content-studio-0.1.0.plugin)
+**التنزيل:** [content-studio-0.2.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/content-studio/content-studio-0.2.0.plugin)
 
 **ما يجب أن تعرفه:**
 - **Claude يُعدّ وأنت تعتمد.** لا يُنشر شيء ولا يُجدول ولا يُصرف مال قبل موافقتك على ذلك الشيء بعينه.
-- **بلا كلمات سر.** تربط حساباتك داخل أداة جدولة (Typefully أو Buffer) وتسجّل الدخول في صفحتها، والتحقق بخطوتين يتم هناك. بلا أداة جدولة يجهّز لك مجلداً بالصورة والنص ترفعه بيدك.
+- **أداة الجدولة اختيارية، وتختار واحدة من ثلاث:** Typefully أو Buffer (تدخل مفتاح API خاصاً بك) أو Metricool (تسجّل الدخول في صفحته). صفحة البلغن تقارن باقاتها المجانية وتشرح ربط كل واحدة. بلا أي أداة يجهّز لك مجلداً بالصورة والنص ترفعه بيدك.
+- **بلا كلمات سر:** لا يطلب أسماء المستخدمين ولا كلمات السر ولا رموز التحقق لحساباتك في وسائل التواصل.
 - صورة المنشور النهائية تحتاج Python 3 و Chrome أو Edge على جهازك.
 - **لم يُجرَّب بعد داخل Claude Desktop حقيقي.** السكربتات مختبَرة آلياً فقط.
 
@@ -157,17 +173,42 @@ bash ~/prevaro-addons/install/uninstall.sh
 - **مكوّنات الآخرين تبقى برخصها**، والقائمة في [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). أهمها:
   - **Remotion:** مجاني حتى 3 موظفين، وما فوق ذلك Company License.
   - **محرك DWG في خادم cad:** برخصة GPL-3.0.
-- **مشكلة أو سؤال؟** افتح [Issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues).
+- **مشكلة أو سؤال؟** افتح [Issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues). لثغرة أمنية: [SECURITY.md](SECURITY.md).
+
+## إخلاء مسؤولية وشروط الاستخدام
+النص الكامل في [DISCLAIMER.md](DISCLAIMER.md). خلاصته:
+- **مشروع مستقل:** ليس تابعاً لـAnthropic ولا Google ولا Typefully ولا Buffer ولا Metricool، وليس معتمداً منها. الأسماء والعلامات ملك لأصحابها.
+- **كما هي، بلا ضمان:** وفق رخصة MIT. أي صرف على مفاتيحك مسؤوليتك، ومخرجات الذكاء الاصطناعي تُراجَع قبل نشرها.
+- **للاستخدام القانوني والأخلاقي فقط:** لا رسائل مزعجة، لا انتحال، لا محتوى مضلِّل أو مزيَّف، لا اعتداء على حقوق الآخرين أو خصوصيتهم، ولا تجاوز لحماية أي منصة.
+- **شروط الخدمات عليك:** أنت المسؤول عن الالتزام بشروط كل منصة وخدمة تربطها، ومنها وسم المحتوى المولّد بالذكاء الاصطناعي.
+- **المسؤولية على المستخدم:** أصحاب المشروع غير مسؤولين عن أي استخدام مخالف أو ضرر ينتج عنه.
+
+<sub>**كلمات مفتاحية:** إضافات Claude · مهارات Claude · بلغنز Claude · ملحقات Claude Desktop · Claude Code · Cowork · خادم MCP · توليد الصور بالذكاء الاصطناعي · توليد الفيديو بالذكاء الاصطناعي · Gemini · تصميم منشورات · تقويم محتوى · إدارة محتوى وسائل التواصل · جدولة المنشورات · Typefully · Buffer · Metricool · محتوى عربي · التيار الخفيف ELV · مخططات CAD</sub>
 
 ---
 
 <a id="english"></a>
 ## English
 
+[Disclaimer](DISCLAIMER.md#english) · [License: MIT](LICENSE)
+
 ### What is this?
-A set of **free add-ons for Claude**; pick the ones you need. Each one is security-reviewed and version-pinned, and is easy to install and remove.
+**Free, open-source add-ons for Claude** that let it generate images and video, run your social media content, design pages and posters, and read CAD drawings. Pick the ones you need; each installs in minutes and is easy to remove.
+
+- **Who is it for?** People who use Claude at work and do not want to write code: business owners, marketers, designers, engineers. And developers in Claude Code.
+- **What does it cost?** The add-ons are free. Whatever you pay, if anything, goes straight to the service you connect with your own key (such as Google Gemini). There is no server of ours in the middle and no subscription.
+- **Is it safe?** Every component is reviewed and version-pinned, and the reviews are published in [reviews/](reviews/). Your keys stay on your computer.
+- **Which languages?** The documentation is in Arabic and English, and the add-ons work in both.
 
 **Prevaro** is an AI design tool project for ELV (extra-low-voltage) drawings and technical reports. These add-ons are its first public part.
+
+### What is inside?
+| Add-on | What it contains | Services and tools it supports |
+|---|---|---|
+| <img src="assets/icon-gemini-media.png" width="28" align="top"> **Gemini Images & Video** | 5 tools: generate image, edit image, generate video, check job, spending counter | Google Gemini (your own key) · Claude Desktop on Mac and Windows |
+| <img src="assets/icon-content-studio.png" width="28" align="top"> **Content Studio** | 7 skills: brand setup, content lead, plan and calendar, final post image, handover for publishing, morning report, image generation. Plus 3 optional connector add-ons | Typefully · Buffer · Metricool (your own key, or sign-in) · Claude Desktop (Cowork) and Claude Code |
+| **Chat skills** | 7 skills: web pages, themes, posters, two interactive line-figure skills, MCP server building, the Gemini skill | claude.ai in the browser and the app |
+| **Claude Code pack** | 12 skills, 9 specialist subagents, a CAD server, and video plugins | Playwright · HyperFrames · Remotion · DWG and DXF drawings · Firecrawl and Perplexity (optional, your own key) · Claude Code on Mac, Windows and Linux |
 
 ### Pick what you need
 | | Add-on | What it adds to Claude | Where it works | Install |
@@ -247,11 +288,12 @@ git clone https://github.com/moutaz990/Prevaro-Add-ons-for-Claude.git ~/prevaro-
 ### 4. Content Studio
 A plugin that makes Claude a social media content lead for any company: save your brand once (logo, colours, font), then it plans the content, composes the final post image at platform sizes, hands each post over for approval, and gives you a morning report on your accounts and competitors.
 
-**Download:** [content-studio-0.1.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/content-studio/content-studio-0.1.0.plugin)
+**Download:** [content-studio-0.2.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/content-studio/content-studio-0.2.0.plugin)
 
 **Good to know:**
 - **Claude prepares, you approve.** Nothing is published, scheduled or paid for before your yes to that specific thing.
-- **No passwords.** You connect your accounts inside a scheduling tool (Typefully or Buffer) and sign in on its own page; two-step verification happens there. Without a scheduler it prepares a folder with the image and caption for you to upload by hand.
+- **A scheduling tool is optional, and you pick one of three:** Typefully or Buffer (you enter your own API key) or Metricool (you sign in on its page). The plugin's page compares their free plans and explains how to connect each one. With no tool at all it prepares a folder with the image and caption for you to upload by hand.
+- **No passwords:** it never asks for the usernames, passwords or login codes of your social media accounts.
 - The final post image needs Python 3 and Chrome or Edge on your computer.
 - **Not yet tried inside a real Claude Desktop install.** The scripts are tested automatically only.
 
@@ -262,4 +304,14 @@ Versions are pinned and the chosen npm packages are at least 14 days old (one do
 
 **License:** what was written for this repository is under the [MIT License](LICENSE): use, change and share it freely, keeping the license text. Other people's components keep their own licenses, listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md); note that Remotion needs a Company License above 3 employees and the DWG engine of the `cad` server is GPL-3.0.
 
-Questions or problems: open an [issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues).
+Questions or problems: open an [issue](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/issues). For a security problem see [SECURITY.md](SECURITY.md).
+
+### Disclaimer and acceptable use
+The full text is in [DISCLAIMER.md](DISCLAIMER.md#english). In short:
+- **An independent project:** not affiliated with or endorsed by Anthropic, Google, Typefully, Buffer or Metricool. Names and trademarks belong to their owners.
+- **As is, without warranty:** under the MIT License. Any spending on your keys is your responsibility, and AI output must be reviewed before it is published.
+- **Lawful and ethical use only:** no spam, no impersonation, no misleading or fabricated content, no infringement of other people's rights or privacy, and no getting around any platform's protections.
+- **The services' terms are yours to follow:** you are responsible for the terms of every platform and service you connect, including labelling AI-generated content.
+- **Responsibility lies with the user:** the project's owners are not responsible for misuse or for any damage that results from it.
+
+<sub>**Keywords:** Claude add-ons · Claude skills · Claude plugins · Claude Desktop extension · MCPB · Claude Code plugin · Cowork plugin · MCP server · Model Context Protocol · AI image generation · AI video generation · Gemini API · text to image · social media content calendar · post design · social media scheduler · Typefully · Buffer · Metricool · Arabic content · ELV · CAD drawings · DWG · DXF</sub>
