@@ -1,0 +1,21 @@
+{
+  "name": "connect-typefully",
+  "version": "0.1.0",
+  "description": "Connects Claude to your Typefully account with your own API key, so approved posts can be placed as drafts or scheduled on X, LinkedIn, Threads, Bluesky and Mastodon. Companion to the Content Studio plugin.",
+  "author": {
+    "name": "Prevaro"
+  },
+  "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/content-studio",
+  "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
+  "license": "MIT",
+  "keywords": ["typefully", "social-media", "scheduler", "x", "linkedin", "mcp"],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Typefully API key",
+      "description": "Create it in your Typefully account settings (API section) and paste it here. It is kept in your computer's secure storage and sent only to Typefully.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}

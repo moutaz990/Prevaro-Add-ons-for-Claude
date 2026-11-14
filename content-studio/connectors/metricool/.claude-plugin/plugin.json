@@ -1,0 +1,12 @@
+{
+  "name": "connect-metricool",
+  "version": "0.1.0",
+  "description": "Connects Claude to your Metricool account by signing in on Metricool's own page (no API key: Metricool gives API tokens on its Advanced plan only). Used for competitor and account figures in the morning report, and for scheduling on Facebook, Instagram, TikTok and YouTube. Companion to the Content Studio plugin.",
+  "author": {
+    "name": "Prevaro"
+  },
+  "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/content-studio",
+  "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
+  "license": "MIT",
+  "keywords": ["metricool", "social-media", "analytics", "competitors", "scheduler", "mcp"]
+}

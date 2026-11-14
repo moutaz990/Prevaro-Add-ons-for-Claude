@@ -14,7 +14,7 @@ metadata:
 
 Bring each finished post to the owner in one clear card, and let nothing enter a publishing tool before the owner has approved that specific post.
 
-**Accounts are connected by signing in on the scheduler's or the platform's own page (OAuth). Never ask for a password or a login code in the chat, and never write one to a file.** Two-step verification happens on that page, between the owner and the platform.
+**The owner connects their social accounts inside the scheduler, on its website. Claude reaches the scheduler through its connector, set up once with the scheduler's API key or by signing in on its page. Never ask for a social media password, a login code or an API key in the chat, and never write one to a file.** If a connector is not set up, say so and point to `CONNECTORS.md`.
 
 ## Inputs
 

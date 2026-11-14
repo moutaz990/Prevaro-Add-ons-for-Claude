@@ -1,6 +1,6 @@
 {
   "name": "prevaro-addons",
-  "description": "Prevaro Add-ons for Claude: the Content Studio plugin, and third-party plugins pinned to reviewed commits.",
+  "description": "Prevaro Add-ons for Claude: the Content Studio plugin and its scheduler connectors, and third-party plugins pinned to reviewed commits.",
   "owner": {
     "name": "Prevaro Add-ons for Claude"
   },
@@ -8,8 +8,26 @@
     {
       "name": "content-studio",
       "description": "Social media content from plan to post, for any brand: brand setup, content plan and calendar, final post image with your logo, handover for approval, and a morning report. Prepares drafts; the owner approves every post.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": "./content-studio/plugin"
+    },
+    {
+      "name": "connect-typefully",
+      "description": "Connects Claude to your Typefully account with your own API key, so approved posts can be placed as drafts or scheduled on X, LinkedIn, Threads, Bluesky and Mastodon. Companion to the Content Studio plugin.",
+      "version": "0.1.0",
+      "source": "./content-studio/connectors/typefully"
+    },
+    {
+      "name": "connect-buffer",
+      "description": "Connects Claude to your Buffer account with your own API key, so approved posts can be placed as drafts or scheduled on Facebook, Instagram, TikTok, YouTube, LinkedIn, X and more. Companion to the Content Studio plugin.",
+      "version": "0.1.0",
+      "source": "./content-studio/connectors/buffer"
+    },
+    {
+      "name": "connect-metricool",
+      "description": "Connects Claude to your Metricool account by signing in on Metricool's own page (no API key: Metricool gives API tokens on its Advanced plan only). Used for competitor and account figures in the morning report, and for scheduling on Facebook, Instagram, TikTok and YouTube. Companion to the Content Studio plugin.",
+      "version": "0.1.0",
+      "source": "./content-studio/connectors/metricool"
     },
     {
       "name": "auto-handoff",

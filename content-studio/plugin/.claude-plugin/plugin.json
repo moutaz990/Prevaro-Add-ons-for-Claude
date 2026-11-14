@@ -1,6 +1,6 @@
 {
   "name": "content-studio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Social media content from plan to post, for any brand: set up the brand once, plan the content, compose the final post image with your logo and font, hand each post over for approval, and get a morning report on your accounts and competitors. Prepares drafts; the owner approves every post.",
   "author": {
     "name": "Prevaro"
@@ -8,5 +8,14 @@
   "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
   "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
   "license": "MIT",
-  "keywords": ["social-media", "content", "marketing", "arabic", "brand"]
+  "keywords": [
+    "social-media",
+    "content",
+    "content-calendar",
+    "marketing",
+    "arabic",
+    "brand",
+    "scheduler",
+    "post-design"
+  ]
 }

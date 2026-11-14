@@ -16,17 +16,17 @@ Social media content from plan to post, for any brand. Set the brand up once, th
 | `post-handover` | Handover card, then a draft in your scheduler or a publish pack | "Hand over the post" |
 | `social-monitor` | Morning report: competitors, trends, your accounts, ideas for the week | "Morning brief" |
 
-**Connectors** (see `CONNECTORS.md`): Typefully and Buffer are included as optional schedulers; connect the one you use, or neither. Image and video generation uses the separate Gemini Images & Video extension from the same repository, or any image tool you already have.
+**Connectors** (see `CONNECTORS.md`): none is bundled. Add the scheduler you use as a small add-on from the same repository: `connect-typefully` or `connect-buffer` (you paste your own API key), or `connect-metricool` (you sign in on its page). `CONNECTORS.md` compares their free plans. Image and video generation uses the separate Gemini Images & Video extension, or any image tool you already have.
 
 ## Setup
 
 1. Install the plugin.
    - Claude Code: `/plugin install content-studio --marketplace moutaz990/Prevaro-Add-ons-for-Claude`
-   - Claude Desktop (Cowork): open the `content-studio-0.1.0.plugin` file and accept it.
+   - Claude Desktop (Cowork): open the `content-studio-0.2.0.plugin` file and accept it.
 2. Choose a working folder and say "set up my brand". You need your logo file, your colours and your font.
-3. Optional: connect your scheduler (sign in on its own page) and install the Gemini extension.
+3. Optional: add a scheduler add-on, for example `/plugin install connect-buffer --marketplace moutaz990/Prevaro-Add-ons-for-Claude`, and install the Gemini extension.
 
-No environment variables and no keys are needed by this plugin.
+This plugin itself needs no keys and no environment variables. A scheduler add-on asks for that scheduler's API key once.
 
 ## Usage
 
@@ -39,7 +39,7 @@ The scripts (final image, calendar, report figures) need Python 3, and the final
 ## Privacy
 
 - This plugin stores nothing outside your working folder and sends nothing anywhere by itself.
-- It never asks for account passwords or login codes. Accounts are connected by signing in on the scheduler's own page.
+- It never asks for your social media usernames, passwords or login codes. You connect your social accounts inside the scheduler, on its website; Claude reaches the scheduler with an API key the scheduler issued to you, or by signing in on its page.
 - A connected scheduler receives the posts you approve. An image generator receives your prompts and any picture you ask it to edit. Each service's own privacy policy applies; read it on that service's website before connecting.
 - The morning report only reads: it never likes, follows, comments, messages or posts.
 

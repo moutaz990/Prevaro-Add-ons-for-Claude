@@ -20,7 +20,7 @@ A short morning report for the owner: what worked for competitors, what is trend
 - `content-studio/content-brief.md`: the brand's handles, the approved competitor list, regions and pillars. If something is missing and the owner is present, ask once and save it; if not, use what is there and list what is missing at the top of the report.
 - The running log `content-studio/social-log.csv`. If it does not exist: `python scripts/social_metrics.py init content-studio/social-log.csv`.
 - Sources, in this order:
-  1. ~~social scheduler analytics for the brand's own posts, if connected.
+  1. ~~social scheduler figures, if connected: the brand's own posts, and competitor accounts where the tool offers them (Metricool does).
   2. Web search and public pages.
   3. A browser tool in which the owner is already logged in, if one is available.
 - Never ask for a password or a login code.

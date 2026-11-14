@@ -1,0 +1,21 @@
+{
+  "name": "connect-buffer",
+  "version": "0.1.0",
+  "description": "Connects Claude to your Buffer account with your own API key, so approved posts can be placed as drafts or scheduled on Facebook, Instagram, TikTok, YouTube, LinkedIn, X and more. Companion to the Content Studio plugin.",
+  "author": {
+    "name": "Prevaro"
+  },
+  "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/content-studio",
+  "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
+  "license": "MIT",
+  "keywords": ["buffer", "social-media", "scheduler", "instagram", "facebook", "tiktok", "youtube", "mcp"],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Buffer API key",
+      "description": "In Buffer open your account settings, then API, and create a personal API key (the account owner can do this). Paste it here. It is kept in your computer's secure storage and sent only to Buffer.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}
