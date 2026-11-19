@@ -1,0 +1,12 @@
+{
+  "name": "connect-fathom",
+  "version": "0.1.0",
+  "description": "Connects Claude to your Fathom account by signing in on Fathom's own page, so Claude can read the transcripts and summaries of meetings Fathom recorded on Zoom, Google Meet and Microsoft Teams. Companion to the Meeting Assistant plugin.",
+  "author": {
+    "name": "Prevaro"
+  },
+  "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/meeting-assistant",
+  "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
+  "license": "MIT",
+  "keywords": ["fathom", "meetings", "transcripts", "notetaker", "mcp"]
+}

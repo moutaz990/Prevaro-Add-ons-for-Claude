@@ -3,9 +3,10 @@
 
 Everything is drawn here from simple shapes and text; no third-party artwork and no vendor logo is used.
 Output (PNG): assets/banner.png, assets/social-preview.png, assets/icon-gemini-media.png,
-              assets/icon-content-studio.png
+              assets/icon-content-studio.png, assets/icon-meeting-assistant.png
 The icons are also copied to where the packages read them:
-              gemini-media/source/icon.png, content-studio/plugin/.claude-plugin/icon.png
+              gemini-media/source/icon.png, content-studio/plugin/.claude-plugin/icon.png,
+              meeting-assistant/plugin/.claude-plugin/icon.png
 
 Needs a local Chrome, Chromium or Edge, and the Tajawal font installed (Bold and Regular).
 Usage: python3 tools/build_assets.py [--browser PATH]
@@ -42,6 +43,19 @@ ICON_STUDIO = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 <path d="M344 388 L364 408 L402 366" fill="none" stroke="{PAPER}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>"""
 
+ICON_MEETING = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs><linearGradient id="c" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#075985"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
+<rect width="512" height="512" rx="112" fill="url(#c)"/>
+<rect x="100" y="124" width="312" height="284" rx="36" fill="{PAPER}"/>
+<path d="M100 196 L100 160 Q100 124 136 124 L376 124 Q412 124 412 160 L412 196 Z" fill="{INK}"/>
+<rect x="164" y="92" width="26" height="72" rx="13" fill="{AMBER}"/>
+<rect x="322" y="92" width="26" height="72" rx="13" fill="{AMBER}"/>
+<path d="M144 258 L162 276 L194 240" fill="none" stroke="#0EA5E9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="222" y="246" width="150" height="22" rx="11" fill="{INK}"/>
+<path d="M144 334 L162 352 L194 316" fill="none" stroke="#0EA5E9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="222" y="322" width="112" height="22" rx="11" fill="{SLATE}"/>
+</svg>"""
+
 ICON_SKILLS = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 <rect width="512" height="512" rx="112" fill="#1E293B"/>
 <path d="M256 112 L408 192 L256 272 L104 192 Z" fill="{MINT}"/>
@@ -69,7 +83,7 @@ def icon_page(svg):
 def wide_page(width, height, big):
     """Banner (README) and social preview (repository settings) share one layout."""
     tiles = "".join(f'<div class="tile">{svg}<span>{label}</span></div>' for svg, label in (
-        (ICON_GEMINI, "Images &amp; Video"), (ICON_STUDIO, "Content Studio"), (ICON_SKILLS, "Chat skills"), (ICON_CODE, "Claude Code pack")))
+        (ICON_GEMINI, "Images &amp; Video"), (ICON_STUDIO, "Content Studio"), (ICON_MEETING, "Meetings"), (ICON_SKILLS, "Chat skills"), (ICON_CODE, "Code pack")))
     u = height / 100
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{FONT}
 *{{box-sizing:border-box;margin:0;padding:0}}
@@ -82,8 +96,8 @@ body{{font-family:T,sans-serif;color:{PAPER};background:radial-gradient(ellipse 
 h1{{font-weight:700;font-size:{(11.5 if big else 13) * u}px;line-height:1.05;letter-spacing:-{0.1 * u}px}}
 h1 b{{color:{MINT};font-weight:700}}
 p{{font-weight:400;font-size:{(4.6 if big else 5.2) * u}px;color:#CBD5E1;margin-top:{1.4 * u}px}}
-.tiles{{display:flex;gap:{3 * u}px}}
-.tile{{flex:1;display:flex;align-items:center;gap:{1.8 * u}px;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.25);
+.tiles{{display:flex;flex-wrap:{"wrap" if big else "nowrap"};gap:{(2.4 if big else 3) * u}px}}
+.tile{{flex:{"0 0 auto" if big else "1"};display:flex;align-items:center;gap:{1.8 * u}px;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.25);
   border-radius:{3 * u}px;padding:{1.8 * u}px {2.8 * u}px {1.8 * u}px {1.8 * u}px}}
 .tile svg{{width:{(9 if big else 11) * u}px;height:{(9 if big else 11) * u}px;display:block;flex:none}}
 .tile span{{font-weight:700;font-size:{(4.2 if big else 4.8) * u}px;white-space:nowrap}}
@@ -137,10 +151,12 @@ def main():
     OUT.mkdir(exist_ok=True)
     render(browser, icon_page(ICON_GEMINI), OUT / "icon-gemini-media.png", 512, 512, transparent=True)
     render(browser, icon_page(ICON_STUDIO), OUT / "icon-content-studio.png", 512, 512, transparent=True)
+    render(browser, icon_page(ICON_MEETING), OUT / "icon-meeting-assistant.png", 512, 512, transparent=True)
     render(browser, wide_page(1100, 360, big=False), OUT / "banner.png", 1100, 360, scale=2, need_font=True)
     render(browser, wide_page(1280, 640, big=True), OUT / "social-preview.png", 1280, 640, need_font=True)
     shutil.copyfile(OUT / "icon-gemini-media.png", ROOT / "gemini-media" / "source" / "icon.png")
     shutil.copyfile(OUT / "icon-content-studio.png", ROOT / "content-studio" / "plugin" / ".claude-plugin" / "icon.png")
+    shutil.copyfile(OUT / "icon-meeting-assistant.png", ROOT / "meeting-assistant" / "plugin" / ".claude-plugin" / "icon.png")
     return 0
 
 

@@ -1,0 +1,21 @@
+{
+  "name": "connect-zoho-mail",
+  "version": "0.1.0",
+  "description": "Connects Claude to your Zoho Mail through Zoho's own MCP service. You create your personal server address in Zoho's MCP console and paste it once; Claude can then read, search and draft email in your Zoho mailbox.",
+  "author": {
+    "name": "Prevaro"
+  },
+  "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/meeting-assistant",
+  "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
+  "license": "MIT",
+  "keywords": ["zoho", "zoho-mail", "email", "mcp"],
+  "userConfig": {
+    "mcp_url": {
+      "type": "string",
+      "title": "Your Zoho MCP server address",
+      "description": "Sign in at mcp.zoho.com (or your region's Zoho MCP console), create an MCP server, add the Zoho Mail tools you want, and copy the address shown under Connect. Paste the whole address here. Treat it like a password: it is kept in your computer's secure storage.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}

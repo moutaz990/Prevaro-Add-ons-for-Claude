@@ -5,7 +5,7 @@
 هذا نص بلغة بسيطة يوضّح حدود هذا المشروع ومسؤولية من يستخدمه. ليس استشارة قانونية، ولا يحل محل رخصة [MIT](LICENSE) التي تحكم الكود.
 
 ## 1. مشروع مستقل
-- **Prevaro Add-ons for Claude** مشروع مستقل. ليس تابعاً لـAnthropic ولا Google ولا Typefully ولا Buffer ولا Metricool ولا أي شركة أخرى يرد اسمها هنا، وليس معتمداً منها.
+- **Prevaro Add-ons for Claude** مشروع مستقل. ليس تابعاً لـAnthropic ولا Google ولا Typefully ولا Buffer ولا Metricool ولا Fathom ولا Fireflies ولا Zoho ولا Zoom ولا Microsoft ولا أي شركة أخرى يرد اسمها هنا، وليس معتمداً منها.
 - الأسماء والعلامات التجارية (Claude، Gemini، وغيرها) ملك لأصحابها، وتُذكر هنا فقط لبيان ما تعمل معه الإضافات.
 - الصور والأيقونات في هذا المستودع مرسومة له، ولا تستخدم شعار أي شركة.
 
@@ -23,6 +23,7 @@
 - محتوى يخالف القانون في بلدك أو بلد جمهورك، أو يعتدي على حقوق الآخرين (حقوق نشر، علامات، خصوصية).
 - معالجة بيانات شخصية أو بيانات عملاء دون أساس نظامي وإذن أصحابها. لا ترسل وجوه أشخاص حقيقيين أو مستنداتهم إلى خدمات التوليد.
 - تجاوز حماية أي منصة: CAPTCHA، التحقق بخطوتين، حدود الاستخدام، أو الحظر. ولا في جمع بيانات يخالف شروط الموقع.
+- تسجيل اجتماع أو مكالمة دون علم الحاضرين، أو مشاركة تسجيل أو نص دون إذن أصحابه.
 - التحرش أو التشهير أو التحريض.
 
 ## 4. شروط الخدمات التي تربطها
@@ -46,7 +47,7 @@
 This is a plain-language statement of what this project is and what its users are responsible for. It is not legal advice, and it does not replace the [MIT License](LICENSE) that governs the code.
 
 ## 1. An independent project
-- **Prevaro Add-ons for Claude** is an independent project. It is not affiliated with, endorsed by or sponsored by Anthropic, Google, Typefully, Buffer, Metricool or any other company named here.
+- **Prevaro Add-ons for Claude** is an independent project. It is not affiliated with, endorsed by or sponsored by Anthropic, Google, Typefully, Buffer, Metricool, Fathom, Fireflies, Zoho, Zoom, Microsoft or any other company named here.
 - Names and trademarks (Claude, Gemini and others) belong to their owners and are used only to say what the add-ons work with.
 - The images and icons in this repository were drawn for it and use no company's logo.
 
@@ -64,6 +65,7 @@ Use these add-ons for lawful and ethical purposes only. **Do not use them for:**
 - Content that is illegal where you or your audience are, or that infringes other people's rights (copyright, trademarks, privacy).
 - Processing personal data or customer data without a lawful basis and the consent of the people concerned. Do not send real people's faces or documents to generation services.
 - Getting around any platform's protections: CAPTCHA, two-step verification, rate limits or bans. Nor for collecting data against a site's terms.
+- Recording a meeting or a call without the attendees' knowledge, or sharing a recording or transcript without the consent of the people in it.
 - Harassment, defamation or incitement.
 
 ## 4. Terms of the services you connect

@@ -5,6 +5,8 @@
 | auto-handoff (**معطّل**) | prevaro-addons (هذا المستودع: `.claude-plugin/marketplace.json`) | 0.8.6 / `8d762ce` | 3 | reviews/03-auto-handoff.md |
 | content-studio (**لا يُثبَّت تلقائياً**) | prevaro-addons (المصدر في هذا المستودع: `content-studio/plugin/`) | 0.2.0 | — | reviews/12-content-studio.md |
 | connect-typefully، connect-buffer، connect-metricool (**لا تُثبَّت تلقائياً**) | prevaro-addons (`content-studio/connectors/`) | 0.1.0 | — | reviews/12-content-studio.md |
+| meeting-assistant (**لا يُثبَّت تلقائياً**) | prevaro-addons (`meeting-assistant/plugin/`) | 0.1.0 | — | reviews/13-meeting-assistant.md |
+| connect-fathom، connect-fireflies، connect-zoho-mail (**لا تُثبَّت تلقائياً**) | prevaro-addons (`meeting-assistant/connectors/`) | 0.1.0 | — | reviews/13-meeting-assistant.md |
 
 - `content-studio` مكتوب لهذا المستودع وليس من طرف ثالث. أمر التثبيت العام لا يثبّته؛ يثبّته من يريده بالأمر `/plugin install content-studio@prevaro-addons` أو بملف `.plugin`.
 - المتجر الخاص `prevaro-addons` يُضاف بالأمر `claude plugin marketplace add <مسار المستودع>`، ويشير إلى sha مراجَع لا إلى فرع.

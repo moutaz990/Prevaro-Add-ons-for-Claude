@@ -1,0 +1,21 @@
+{
+  "name": "connect-fireflies",
+  "version": "0.1.0",
+  "description": "Connects Claude to your Fireflies account with your own API key, so Claude can read the transcripts and summaries of meetings Fireflies recorded on Zoom, Google Meet, Microsoft Teams and other platforms. Companion to the Meeting Assistant plugin.",
+  "author": {
+    "name": "Prevaro"
+  },
+  "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/meeting-assistant",
+  "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
+  "license": "MIT",
+  "keywords": ["fireflies", "meetings", "transcripts", "notetaker", "mcp"],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Fireflies API key",
+      "description": "In Fireflies open Settings, then Developer Settings, and copy your API key. Paste it here. It is kept in your computer's secure storage and sent only to Fireflies.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}

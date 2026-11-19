@@ -19,6 +19,7 @@
 |---|---|---|
 | <img src="assets/icon-gemini-media.png" width="28" align="top"> **Gemini Images & Video** | 5 أدوات: توليد صورة، تعديل صورة، توليد فيديو، متابعة المهمة، عدّاد الصرف | Google Gemini (بمفتاحك) · Claude Desktop على Mac و Windows |
 | <img src="assets/icon-content-studio.png" width="28" align="top"> **Content Studio** | 7 مهارات: إعداد الهوية، مسؤول المحتوى، خطة وتقويم، تركيب صورة المنشور، التسليم للنشر، تقرير الصباح، توليد الصور. و3 إضافات ربط اختيارية | Typefully · Buffer · Metricool (بمفتاحك أو بتسجيل الدخول) · Claude Desktop (Cowork) و Claude Code |
+| <img src="assets/icon-meeting-assistant.png" width="28" align="top"> **Meeting Assistant** | مهارتان: محضر الاجتماع، وجدولة الاجتماعات. و3 إضافات ربط اختيارية | Zoom · Google Meet · Microsoft Teams (عبر مدوّن أو تسجيل المنصة نفسها) · Fathom · Fireflies · Zoho Mail · Claude Desktop (Cowork) و Claude Code |
 | **مهارات للمحادثة** | 7 مهارات: صفحات ويب، ثيمات، ملصقات، رسمان خطيان تفاعليان، بناء خوادم MCP، مهارة Gemini | claude.ai في المتصفح والتطبيق |
 | **حزمة Claude Code** | 12 مهارة، 9 وكلاء متخصصين، خادم CAD، وبلغنز فيديو | Playwright · HyperFrames · Remotion · مخططات DWG و DXF · Firecrawl و Perplexity (اختياريان، بمفتاحك) · Claude Code على Mac و Windows و Linux |
 
@@ -29,6 +30,7 @@
 | **2** | [**مهارات للمحادثة**](#2-مهارات-للمحادثة) | 7 مهارات: صفحات ويب، ثيمات، ملصقات، رسوم خطية تفاعلية، ومهارة مرافقة لإضافة Gemini | Claude في المتصفح أو التطبيق | رفع ملف ZIP، بلا تثبيت |
 | **3** | [**حزمة Claude Code**](#3-حزمة-claude-code) | مهارات تصميم وفيديو، قراءة مخططات CAD، 9 وكلاء متخصصين | Claude Code على Mac و Windows و Linux | أمر واحد |
 | **4** | [**Content Studio**](#4-content-studio) | مسؤول محتوى لوسائل التواصل: خطة، صورة المنشور بشعارك وخطك، تسليم للاعتماد، وتقرير صباحي عن حساباتك ومنافسيك | تطبيق Claude Desktop (Cowork) و Claude Code | ملف بلغن واحد، أو أمران |
+| **5** | [**Meeting Assistant**](#5-meeting-assistant) | محضر الاجتماع (قرارات ومهام) من نص اجتماعات Zoom و Meet و Teams، وجدولة الاجتماعات على تقويمك | تطبيق Claude Desktop (Cowork) و Claude Code | ملف بلغن واحد، أو أمران |
 
 لا تعرف من أين تبدأ؟ إن كنت تستخدم تطبيق Claude على حاسوبك فابدأ بالأولى.
 
@@ -163,6 +165,23 @@ bash ~/prevaro-addons/install/uninstall.sh
 
 ---
 
+## 5. Meeting Assistant
+بلغن يكتب **محضر الاجتماع** من نص الاجتماع: القرارات، والمهام بأصحابها ومواعيدها، والأسئلة المفتوحة، ثم يجهّز رسالة المتابعة ويجدول ما اتُّفق عليه على تقويمك.
+
+**التنزيل:** [meeting-assistant-0.1.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/meeting-assistant/meeting-assistant-0.1.0.plugin)
+
+**ما يجب أن تعرفه:**
+- **Claude لا يدخل الاجتماع.** مدوّن اجتماعات (Fathom أو Fireflies) أو تسجيل المنصة نفسها (Zoom، Teams، Meet) يصنع النص، و Claude يقرؤه بعد الاجتماع. وبلا أي ربط تلصق النص أو ملاحظاتك.
+- **Claude يُعدّ وأنت تعتمد.** لا تُرسل رسالة ولا يُنشأ موعد قبل موافقتك على ذلك الشيء بعينه.
+- **لا تخمين:** المسؤول أو الموعد الذي لم يُذكر يُكتب `[TBC]`، والمقاطع غير الواضحة تُعلَّم. دقة تفريغ العربية عند المدوّنين غير مؤكدة، فجرّب اجتماعاً واحداً قبل الاعتماد.
+- **إضافات ربط اختيارية:** Fathom (تسجيل دخول)، Fireflies (مفتاح API)، Zoho Mail (عنوان خادمك من لوحة Zoho).
+- **أخبر الحاضرين بالتسجيل.** لا تسجّل أحداً دون علمه.
+- **لم يُجرَّب بعد داخل Claude Desktop حقيقي ولا مع حسابات حقيقية.**
+
+الشرح الكامل والتثبيت: [meeting-assistant/](meeting-assistant/).
+
+---
+
 ## الأمان
 - **الإصدارات:** ثابتة، وحزم npm المختارة عمرها 14 يوماً على الأقل (باستثناء موثق واحد).
 - **سكربتات التثبيت الخارجية:** لا تُشغَّل.
@@ -177,7 +196,7 @@ bash ~/prevaro-addons/install/uninstall.sh
 
 ## إخلاء مسؤولية وشروط الاستخدام
 النص الكامل في [DISCLAIMER.md](DISCLAIMER.md). خلاصته:
-- **مشروع مستقل:** ليس تابعاً لـAnthropic ولا Google ولا Typefully ولا Buffer ولا Metricool، وليس معتمداً منها. الأسماء والعلامات ملك لأصحابها.
+- **مشروع مستقل:** ليس تابعاً لـAnthropic ولا Google ولا Typefully ولا Buffer ولا Metricool ولا Fathom ولا Fireflies ولا Zoho ولا Zoom ولا Microsoft، وليس معتمداً منها. الأسماء والعلامات ملك لأصحابها.
 - **كما هي، بلا ضمان:** وفق رخصة MIT. أي صرف على مفاتيحك مسؤوليتك، ومخرجات الذكاء الاصطناعي تُراجَع قبل نشرها.
 - **للاستخدام القانوني والأخلاقي فقط:** لا رسائل مزعجة، لا انتحال، لا محتوى مضلِّل أو مزيَّف، لا اعتداء على حقوق الآخرين أو خصوصيتهم، ولا تجاوز لحماية أي منصة.
 - **شروط الخدمات عليك:** أنت المسؤول عن الالتزام بشروط كل منصة وخدمة تربطها، ومنها وسم المحتوى المولّد بالذكاء الاصطناعي.
@@ -207,6 +226,7 @@ bash ~/prevaro-addons/install/uninstall.sh
 |---|---|---|
 | <img src="assets/icon-gemini-media.png" width="28" align="top"> **Gemini Images & Video** | 5 tools: generate image, edit image, generate video, check job, spending counter | Google Gemini (your own key) · Claude Desktop on Mac and Windows |
 | <img src="assets/icon-content-studio.png" width="28" align="top"> **Content Studio** | 7 skills: brand setup, content lead, plan and calendar, final post image, handover for publishing, morning report, image generation. Plus 3 optional connector add-ons | Typefully · Buffer · Metricool (your own key, or sign-in) · Claude Desktop (Cowork) and Claude Code |
+| <img src="assets/icon-meeting-assistant.png" width="28" align="top"> **Meeting Assistant** | 2 skills: minutes of meeting, and meeting scheduling. Plus 3 optional connector add-ons | Zoom · Google Meet · Microsoft Teams (through a notetaker or the platform's own recording) · Fathom · Fireflies · Zoho Mail · Claude Desktop (Cowork) and Claude Code |
 | **Chat skills** | 7 skills: web pages, themes, posters, two interactive line-figure skills, MCP server building, the Gemini skill | claude.ai in the browser and the app |
 | **Claude Code pack** | 12 skills, 9 specialist subagents, a CAD server, and video plugins | Playwright · HyperFrames · Remotion · DWG and DXF drawings · Firecrawl and Perplexity (optional, your own key) · Claude Code on Mac, Windows and Linux |
 
@@ -217,6 +237,7 @@ bash ~/prevaro-addons/install/uninstall.sh
 | **2** | [**Chat skills**](#2-chat-skills) | 7 skills: web pages, themes, posters, interactive line figures, and a companion skill for the Gemini extension | Claude in the browser or the app | Upload a ZIP, nothing to install |
 | **3** | [**Claude Code pack**](#3-claude-code-pack) | Design and video skills, CAD drawing reader, 9 specialist subagents | Claude Code on Mac, Windows and Linux | One command |
 | **4** | [**Content Studio**](#4-content-studio-1) | A social media content lead: plan, final post image with your logo and font, handover for approval, and a morning report on your accounts and competitors | Claude Desktop (Cowork) and Claude Code | One plugin file, or two commands |
+| **5** | [**Meeting Assistant**](#5-meeting-assistant-1) | Minutes of meeting (decisions and action items) from Zoom, Meet and Teams transcripts, and meeting scheduling on your calendar | Claude Desktop (Cowork) and Claude Code | One plugin file, or two commands |
 
 Not sure where to start? If you use the Claude app on your computer, start with the first one.
 
@@ -299,6 +320,21 @@ A plugin that makes Claude a social media content lead for any company: save you
 
 Full instructions and install: [content-studio/](content-studio/README.md#english).
 
+### 5. Meeting Assistant
+A plugin that writes the **minutes of a meeting** from its transcript: decisions, action items with owners and dates, open questions. It then drafts the follow-up message and schedules what was agreed on your calendar.
+
+**Download:** [meeting-assistant-0.1.0.plugin](https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/raw/main/meeting-assistant/meeting-assistant-0.1.0.plugin)
+
+**Good to know:**
+- **Claude does not join the meeting.** A notetaker (Fathom or Fireflies) or the platform's own recording (Zoom, Teams, Meet) makes the transcript, and Claude reads it afterwards. With nothing connected you paste the transcript or your notes.
+- **Claude prepares, you approve.** No message is sent and no event is created before your yes to that specific thing.
+- **No guessing:** an owner or a date that was not said is written `[TBC]`, and unclear passages are marked. How well the notetakers transcribe Arabic is not confirmed, so try one meeting before relying on it.
+- **Optional connector add-ons:** Fathom (sign-in), Fireflies (API key), Zoho Mail (your server address from Zoho's console).
+- **Tell attendees about the recording.** Never record anyone without their knowledge.
+- **Not yet tried inside a real Claude Desktop install or with real accounts.**
+
+Full instructions and install: [meeting-assistant/](meeting-assistant/README.md#english).
+
 ### Security
 Versions are pinned and the chosen npm packages are at least 14 days old (one documented exception). External install scripts are not run. Telemetry is off and no server is exposed on the network. Security reviews are in [reviews/](reviews/); sources and versions are in [manifest.json](manifest.json). Keys stay on your computer; none are in this repository.
 
@@ -308,7 +344,7 @@ Questions or problems: open an [issue](https://github.com/moutaz990/Prevaro-Add-
 
 ### Disclaimer and acceptable use
 The full text is in [DISCLAIMER.md](DISCLAIMER.md#english). In short:
-- **An independent project:** not affiliated with or endorsed by Anthropic, Google, Typefully, Buffer or Metricool. Names and trademarks belong to their owners.
+- **An independent project:** not affiliated with or endorsed by Anthropic, Google, Typefully, Buffer, Metricool, Fathom, Fireflies, Zoho, Zoom or Microsoft. Names and trademarks belong to their owners.
 - **As is, without warranty:** under the MIT License. Any spending on your keys is your responsibility, and AI output must be reviewed before it is published.
 - **Lawful and ethical use only:** no spam, no impersonation, no misleading or fabricated content, no infringement of other people's rights or privacy, and no getting around any platform's protections.
 - **The services' terms are yours to follow:** you are responsible for the terms of every platform and service you connect, including labelling AI-generated content.

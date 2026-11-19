@@ -1,6 +1,6 @@
 {
   "name": "prevaro-addons",
-  "description": "Prevaro Add-ons for Claude: the Content Studio plugin and its scheduler connectors, and third-party plugins pinned to reviewed commits.",
+  "description": "Prevaro Add-ons for Claude: Content Studio and Meeting Assistant with their connector add-ons, and third-party plugins pinned to reviewed commits.",
   "owner": {
     "name": "Prevaro Add-ons for Claude"
   },
@@ -28,6 +28,30 @@
       "description": "Connects Claude to your Metricool account by signing in on Metricool's own page (no API key: Metricool gives API tokens on its Advanced plan only). Used for competitor and account figures in the morning report, and for scheduling on Facebook, Instagram, TikTok and YouTube. Companion to the Content Studio plugin.",
       "version": "0.1.0",
       "source": "./content-studio/connectors/metricool"
+    },
+    {
+      "name": "meeting-assistant",
+      "description": "Minutes of meeting and scheduling: turns a transcript from your notetaker (Fathom, Fireflies, Zoom, Teams, Google Meet) into minutes with decisions and action items, drafts the follow-up, and schedules meetings on your calendar after your approval. Claude does not join calls itself.",
+      "version": "0.1.0",
+      "source": "./meeting-assistant/plugin"
+    },
+    {
+      "name": "connect-fathom",
+      "description": "Connects Claude to your Fathom account by signing in on Fathom's own page, so Claude can read the transcripts and summaries of meetings Fathom recorded on Zoom, Google Meet and Microsoft Teams. Companion to the Meeting Assistant plugin.",
+      "version": "0.1.0",
+      "source": "./meeting-assistant/connectors/fathom"
+    },
+    {
+      "name": "connect-fireflies",
+      "description": "Connects Claude to your Fireflies account with your own API key, so Claude can read the transcripts and summaries of meetings Fireflies recorded on Zoom, Google Meet, Microsoft Teams and other platforms. Companion to the Meeting Assistant plugin.",
+      "version": "0.1.0",
+      "source": "./meeting-assistant/connectors/fireflies"
+    },
+    {
+      "name": "connect-zoho-mail",
+      "description": "Connects Claude to your Zoho Mail through Zoho's own MCP service. You create your personal server address in Zoho's MCP console and paste it once; Claude can then read, search and draft email in your Zoho mailbox.",
+      "version": "0.1.0",
+      "source": "./meeting-assistant/connectors/zoho-mail"
     },
     {
       "name": "auto-handoff",

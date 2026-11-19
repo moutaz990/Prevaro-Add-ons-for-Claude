@@ -1,0 +1,12 @@
+{
+  "name": "meeting-assistant",
+  "version": "0.1.0",
+  "description": "Minutes of meeting and scheduling: turns a transcript from your notetaker (Fathom, Fireflies, Zoom, Teams, Google Meet) into minutes with decisions and action items, drafts the follow-up, and schedules meetings on your calendar after your approval. Claude does not join calls itself.",
+  "author": {
+    "name": "Prevaro"
+  },
+  "homepage": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude/tree/main/meeting-assistant",
+  "repository": "https://github.com/moutaz990/Prevaro-Add-ons-for-Claude",
+  "license": "MIT",
+  "keywords": ["meetings", "minutes", "mom", "scheduling", "calendar", "zoom", "google-meet", "teams", "arabic"]
+}
